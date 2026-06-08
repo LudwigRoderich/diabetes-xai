@@ -117,12 +117,14 @@ class Trainer:
             xgb_metrics = evaluator.evaluate(xgb, X_fold_val_scaled, y_fold_val)
 
             self.fold_results.append({
-                "fold"       : fold_idx,
-                "dataset_tag": self.dataset_tag,
-                "weights"    : weights,
-                "models"     : {"dt": dt, "xgb": xgb},
+                "fold"        : fold_idx,
+                "dataset_tag" : self.dataset_tag,
+                "weights"     : weights,
+                "models"      : {"dt": dt, "xgb": xgb},
                 "preprocessor": prep,
-                "metrics"    : {"dt": dt_metrics, "xgb": xgb_metrics},
+                "metrics"     : {"dt": dt_metrics, "xgb": xgb_metrics},
+                "X_val"       : X_fold_val_scaled,  # Datos de validación del fold (escalados)
+                "y_val"       : y_fold_val,         # Etiquetas de validación del fold
             })
 
         return self

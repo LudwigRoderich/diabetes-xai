@@ -14,6 +14,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+import pandas as pd
 
 # Permite importar desde src/ sin instalar el paquete
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
@@ -33,6 +34,8 @@ from visualizer import (
     plot_dataset_comparison,
     plot_fold_metrics,
     plot_pr_curves,
+    plot_fold_metrics_optimal,
+    plot_dataset_comparison_optimal,
 )
 
 
@@ -75,6 +78,68 @@ def artifacts_exist(dataset_tag: str) -> bool:
     cv_summary = RESULTS_DIR / f"cv_summary_{dataset_tag}.csv"
     final_res  = RESULTS_DIR / f"final_results_{dataset_tag}.json"
     return cv_summary.exists() and final_res.exists()
+
+
+# ---------------------------------------------------------------------------
+# Recálculo de CV summary con umbral óptimo
+# ---------------------------------------------------------------------------
+
+def recalculate_cv_summary_with_optimal_threshold(
+    trainer,
+    optimal_thresholds: dict,
+    dataset_tag: str,
+) -> pd.DataFrame:
+    """
+    Recalcula el resumen del CV (summary) utilizando los umbrales óptimos
+    encontrados en lugar del umbral por defecto (0.5).
+
+    Parameters
+    ----------
+    trainer : Trainer
+        Objeto con los fold_results (que incluyen modelos y datos).
+    optimal_thresholds : dict
+        Diccionario con los umbrales óptimos por modelo.
+    dataset_tag : str
+        Etiqueta del dataset.
+
+    Returns
+    -------
+    pd.DataFrame : summary con métricas recalculadas.
+    """
+    import pandas as pd
+    from evaluator import Evaluator
+    
+    rows = []
+    
+    # Por cada fold, evaluar los modelos con el umbral óptimo
+    for result in trainer.fold_results:
+        fold_id = result["fold"]
+        row = {"fold": fold_id, "dataset_tag": dataset_tag}
+        
+        X_val_scaled = result["X_val"]
+        y_val = result["y_val"]
+        
+        for model_name in ["dt", "xgb"]:
+            if model_name not in result["models"]:
+                continue
+            
+            model = result["models"][model_name]
+            threshold = optimal_thresholds.get(model_name, 0.5)
+            
+            # Evaluar con el umbral óptimo
+            evaluator = Evaluator(threshold=threshold)
+            metrics = evaluator.evaluate(model, X_val_scaled, y_val)
+            
+            # Agregar métricas al row
+            row[f"{model_name}_prauc"]     = metrics["prauc"]
+            row[f"{model_name}_precision"] = metrics["precision"]
+            row[f"{model_name}_recall"]    = metrics["recall"]
+            row[f"{model_name}_f1"]        = metrics.get("f1", 0.0)
+            row[f"{model_name}_threshold"] = metrics.get("threshold", threshold)
+        
+        rows.append(row)
+    
+    return pd.DataFrame(rows)
 
 
 # ---------------------------------------------------------------------------
@@ -257,12 +322,24 @@ def run_pipeline(dataset_tag: str) -> dict:
     results_path = Persistence.save_final_results(final_results, dataset_tag)
     print(f"      Resultados guardados → {results_path.name}")
 
+    # ------------------------------------------------------------------
+    # Recálculo de CV summary con umbral óptimo (para visualizaciones)
+    # ------------------------------------------------------------------
+    print("\n[Bonus/8] Recalculando CV summary con umbral óptimo...")
+    summary_optimal = recalculate_cv_summary_with_optimal_threshold(
+        trainer,
+        optimal_thresholds,
+        dataset_tag,
+    )
+    print(f"      Summary recalculado con umbral óptimo.")
+
     return {
-        "summary"      : summary,
-        "final_results": final_results,
-        "trainer"      : trainer,
-        "loader"       : loader,
-        "prep_final"   : prep_final,
+        "summary"         : summary,
+        "summary_optimal" : summary_optimal,
+        "final_results"   : final_results,
+        "trainer"         : trainer,
+        "loader"          : loader,
+        "prep_final"      : prep_final,
     }
 
 
@@ -307,6 +384,7 @@ def run_visualizations(results: dict, dataset_tag: str) -> None:
         Etiqueta del dataset.
     """
     summary = results["summary"]
+    summary_optimal = results.get("summary_optimal")
     trainer = results["trainer"]
     loader  = results["loader"]
     prep    = results["prep_final"]
@@ -314,6 +392,11 @@ def run_visualizations(results: dict, dataset_tag: str) -> None:
     # métricas por fold
     path = plot_fold_metrics(summary, dataset_tag)
     print(f"      [Fig] Métricas por fold → {path.name}")
+
+    # métricas por fold (umbral óptimo) — solo si está disponible
+    if summary_optimal is not None:
+        path = plot_fold_metrics_optimal(summary_optimal, dataset_tag)
+        print(f"      [Fig] Métricas por fold → {path.name}")
 
     # pesos de clase por fold (solo si el trainer está disponible)
     if trainer is not None:
@@ -365,5 +448,15 @@ if __name__ == "__main__":
             all_data["clean"]["summary"],
         )
         print(f"      [Fig] Comparación full vs. clean → {path.name}")
+
+        # Comparación con umbral óptimo (solo si ambos tienen summary_optimal)
+        if all(
+            all_data[t].get("summary_optimal") is not None for t in ["full", "clean"]
+        ):
+            path = plot_dataset_comparison_optimal(
+                all_data["full"]["summary_optimal"],
+                all_data["clean"]["summary_optimal"],
+            )
+            print(f"      [Fig] Comparación full vs. clean → {path.name}")
 
     print("\n✓ Pipeline completado.\n")

@@ -12,11 +12,9 @@ y se aplica (transform) sobre los demás folds, nunca al revés.
 """
 
 import joblib
-import numpy as np
 import pandas as pd
 from pathlib import Path
 from sklearn.preprocessing import StandardScaler
-from typing import Optional
 
 from config import CONTINUOUS_COLS, ORDINAL_COLS, SCALERS_DIR
 

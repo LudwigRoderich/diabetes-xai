@@ -271,3 +271,133 @@ def plot_class_weights(
     ax.grid(linestyle="--", alpha=0.4)
     fig.tight_layout()
     return _save_fig(fig, f"class_weights_{dataset_tag}.png")
+
+
+# ---------------------------------------------------------------------------
+# 5. Versiones con umbral óptimo
+# ---------------------------------------------------------------------------
+
+def plot_fold_metrics_optimal(
+    summary: pd.DataFrame,
+    dataset_tag: str,
+    metrics: list | None = None,
+) -> Path:
+    """
+    Genera un gráfico de barras agrupadas similar a plot_fold_metrics,
+    pero indicando que las métricas fueron calculadas con umbral óptimo.
+
+    Parameters
+    ----------
+    summary : pd.DataFrame
+        Summary con métricas recalculadas usando umbral óptimo.
+    dataset_tag : str
+        Etiqueta del dataset ('full' o 'clean').
+    metrics : list of str, optional
+        Métricas a graficar. Por defecto: ['prauc', 'precision', 'recall'].
+
+    Returns
+    -------
+    Path : ruta de la figura guardada.
+    """
+    if metrics is None:
+        metrics = ["prauc", "precision", "recall"]
+
+    models  = ["dt", "xgb"]
+    colors  = _model_colors()
+    n_folds = len(summary)
+    x       = np.arange(n_folds)
+    width   = 0.35
+
+    fig, axes = plt.subplots(
+        1, len(metrics),
+        figsize=(5 * len(metrics), 4),
+        sharey=False,
+    )
+    if len(metrics) == 1:
+        axes = [axes]
+
+    for ax, metric in zip(axes, metrics):
+        for i, model in enumerate(models):
+            col    = f"{model}_{metric}"
+            values = summary[col].values if col in summary.columns else np.zeros(n_folds)
+            offset = (i - 0.5) * width
+            bars   = ax.bar(x + offset, values, width, label=model.upper(), color=colors[model])
+            ax.bar_label(bars, fmt="%.3f", fontsize=7, padding=2)
+
+        ax.set_title(metric.upper().replace("PRAUC", "PR-AUC"), fontsize=11)
+        ax.set_xlabel("Fold")
+        ax.set_xticks(x)
+        ax.set_xticklabels([f"F{i}" for i in summary["fold"].values])
+        ax.set_ylim(0, 1.12)
+        ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("%.2f"))
+        ax.legend(fontsize=8)
+        ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+    fig.suptitle(
+        f"Métricas por fold — dataset: {dataset_tag}",
+        fontsize=13, fontweight="bold", y=1.02,
+    )
+    fig.tight_layout()
+    return _save_fig(fig, f"fold_metrics_{dataset_tag}_optimal.png")
+
+
+def plot_dataset_comparison_optimal(
+    summary_full: pd.DataFrame,
+    summary_clean: pd.DataFrame,
+    metrics: list | None = None,
+) -> Path:
+    """
+    Compara las métricas promedio del CV entre datasets con umbral óptimo.
+
+    Parameters
+    ----------
+    summary_full : pd.DataFrame
+        Resumen del CV sobre el dataset completo (con umbral óptimo).
+    summary_clean : pd.DataFrame
+        Resumen del CV sobre el dataset sin outliers (con umbral óptimo).
+    metrics : list of str, optional
+        Métricas a comparar. Por defecto: ['prauc', 'precision', 'recall'].
+
+    Returns
+    -------
+    Path : ruta de la figura guardada.
+    """
+    if metrics is None:
+        metrics = ["prauc", "precision", "recall"]
+
+    models   = ["dt", "xgb"]
+    datasets = {"full": summary_full, "clean": summary_clean}
+    colors   = {"full": "#4C72B0", "clean": "#55A868"}
+
+    fig, axes = plt.subplots(1, len(metrics), figsize=(5 * len(metrics), 4))
+    if len(metrics) == 1:
+        axes = [axes]
+
+    x     = np.arange(len(models))
+    width = 0.35
+
+    for ax, metric in zip(axes, metrics):
+        for i, (tag, summary) in enumerate(datasets.items()):
+            means  = [summary[f"{m}_{metric}"].mean() for m in models]
+            offset = (i - 0.5) * width
+            bars   = ax.bar(
+                x + offset, means, width,
+                label=f"Dataset: {tag}",
+                color=colors[tag],
+            )
+            ax.bar_label(bars, fmt="%.3f", fontsize=7, padding=2)
+
+        ax.set_title(metric.upper().replace("PRAUC", "PR-AUC"), fontsize=11)
+        ax.set_xticks(x)
+        ax.set_xticklabels([m.upper() for m in models])
+        ax.set_ylim(0, 1.12)
+        ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("%.2f"))
+        ax.legend(fontsize=8)
+        ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+    fig.suptitle(
+        "Comparación de métricas: full vs. clean (promedio CV)",
+        fontsize=13, fontweight="bold", y=1.02,
+    )
+    fig.tight_layout()
+    return _save_fig(fig, "dataset_comparison_optimal.png")

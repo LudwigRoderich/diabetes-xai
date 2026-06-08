@@ -68,7 +68,6 @@ XGBOOST_BASE_PARAMS = {
     "max_depth"       : 6,
     "learning_rate"   : 0.1,
     "subsample"       : 0.8,
-    "use_label_encoder": False,
     "eval_metric"     : "aucpr",
     "random_state"    : XGBOOST_SEED,
 }
@@ -77,6 +76,6 @@ XGBOOST_BASE_PARAMS = {
 # Umbral de clasificación (valor inicial; se optimiza sobre TUNE set)
 # ---------------------------------------------------------------------------
 DEFAULT_THRESHOLD    = 0.5
-THRESHOLD_SEARCH_MIN = 0.10
-THRESHOLD_SEARCH_MAX = 0.90
-THRESHOLD_STEPS      = 81     # paso de 0.01 sobre [0.10, 0.90]
+THRESHOLD_SEARCH_MIN = 0.01
+THRESHOLD_SEARCH_MAX = 0.99
+THRESHOLD_STEPS      = 120     # paso de 0.01 sobre [0.01, 0.99]
