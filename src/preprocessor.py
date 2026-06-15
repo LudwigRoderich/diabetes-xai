@@ -1,188 +1,109 @@
 """
-Estandarización selectiva de variables según su tipo y contexto de uso.
-
-Reglas:
-  - Variables binarias  : nunca se escalan.
-  - Variables continuas : se escalan siempre (entrenamiento y XAI).
-  - Variables ordinales : se escalan únicamente para métodos XAI;
-                          los modelos de clasificación las reciben sin escalar.
-
-El scaler se ajusta (fit) exclusivamente sobre el fold de entrenamiento
-y se aplica (transform) sobre los demás folds, nunca al revés.
+Módulo para el preprocesamiento y escalado selectivo de variables.
+Responsable de manejar las transformaciones necesarias para modelos y XAI.
 """
-
 import joblib
 import pandas as pd
 from pathlib import Path
 from sklearn.preprocessing import StandardScaler
 
-from config import CONTINUOUS_COLS, ORDINAL_COLS, SCALERS_DIR
+from src.config import CONTINUOUS_COLS, ORDINAL_COLS, SCALERS_DIR, get_logger
+
+logger = get_logger(__name__)
 
 
 class Preprocessor:
     """
-    Ajusta y aplica escalado estándar de forma selectiva según el contexto.
-
-    Parameters
-    ----------
-    fold_id : int or str
-        Identificador del fold o partición. Se usa para nombrar el archivo
-        de serialización del scaler (ej. fold_0, final).
-    dataset_tag : str
-        Etiqueta del dataset usado: 'full' para el original, 'clean' para
-        el depurado. Se incluye en el nombre del archivo guardado.
-
-    Attributes
-    ----------
-    _scaler_model : StandardScaler
-        Scaler ajustado sobre las variables continuas (para modelos).
-    _scaler_xai : StandardScaler
-        Scaler ajustado sobre continuas + ordinales (para XAI).
-    _is_fitted : bool
-        Indica si el objeto ya fue ajustado mediante fit().
+    Gestiona el escalado estándar de variables con lógica selectiva.
     """
-
-    def __init__(self, fold_id, dataset_tag: str = "full") -> None:
-        self.fold_id     = fold_id
+    def __init__(self, fold_id: str | int, dataset_tag: str = "full") -> None:
+        self.fold_id = fold_id
         self.dataset_tag = dataset_tag
-
+        
         self._scaler_model = StandardScaler()
-        self._scaler_xai   = StandardScaler()
-        self._is_fitted    = False
+        self._scaler_xai = StandardScaler()
+        self._is_fitted = False
+        
+        logger.debug(f"Preprocessor inicializado -> fold: {fold_id} | dataset: {dataset_tag}")
 
-    # ------------------------------------------------------------------
     def fit(self, X: pd.DataFrame) -> "Preprocessor":
-        """
-        Ajusta ambos scalers sobre el conjunto de entrenamiento del fold.
-
-        Parameters
-        ----------
-        X : pd.DataFrame
-            Subconjunto de entrenamiento del fold actual. Debe contener
-            todas las columnas definidas en CONTINUOUS_COLS y ORDINAL_COLS.
-
-        Returns
-        -------
-        self
-        """
-        self._scaler_model.fit(X[CONTINUOUS_COLS])
-        self._scaler_xai.fit(X[CONTINUOUS_COLS + ORDINAL_COLS])
-        self._is_fitted = True
+        """Ajusta los escaladores sobre el conjunto de entrenamiento."""
+        try:
+            # 1. Ajuste para los modelos predictivos (solo continuas)
+            self._scaler_model.fit(X[CONTINUOUS_COLS])
+            
+            # 2. Ajuste estricto para XAI (continuas + ordinales)
+            xai_cols = CONTINUOUS_COLS + ORDINAL_COLS
+            self._scaler_xai.fit(X[xai_cols])
+            
+            self._is_fitted = True
+            logger.debug(f"Escaladores ajustados exitosamente para el fold {self.fold_id}.")
+        except KeyError as e:
+            logger.error(f"Error al acceder a las columnas durante fit() en fold {self.fold_id}: {e}")
+            raise
+            
         return self
 
-    # ------------------------------------------------------------------
-    def transform(
-        self, X: pd.DataFrame, xai_mode: bool = False
-    ) -> pd.DataFrame:
-        """
-        Aplica el escalado correspondiente sin modificar el DataFrame original.
-
-        Parameters
-        ----------
-        X : pd.DataFrame
-            Conjunto a transformar.
-        xai_mode : bool
-            Si False (defecto), escala únicamente CONTINUOUS_COLS.
-            Si True, escala CONTINUOUS_COLS + ORDINAL_COLS.
-
-        Returns
-        -------
-        pd.DataFrame
-            Copia del DataFrame con las columnas correspondientes escaladas.
-            Las columnas binarias permanecen intactas.
-        """
+    def transform(self, X: pd.DataFrame, xai_mode: bool = False) -> pd.DataFrame:
+        """Aplica la transformación seleccionada sin modificar el DataFrame original."""
         self._check_fitted()
         X_out = X.copy()
-
-        if xai_mode:
-            cols    = CONTINUOUS_COLS + ORDINAL_COLS
-            scaler  = self._scaler_xai
-        else:
-            cols    = CONTINUOUS_COLS
-            scaler  = self._scaler_model
-
-        X_out[cols] = scaler.transform(X[cols])
+        
+        try:
+            if xai_mode:
+                cols = CONTINUOUS_COLS + ORDINAL_COLS
+                X_out[cols] = self._scaler_xai.transform(X[cols])
+            else:
+                cols = CONTINUOUS_COLS
+                X_out[cols] = self._scaler_model.transform(X[cols])
+        except KeyError as e:
+            logger.error(f"Faltan columnas esperadas durante transform() en fold {self.fold_id}: {e}")
+            raise
+            
         return X_out
 
-    # ------------------------------------------------------------------
-    def fit_transform(
-        self, X: pd.DataFrame, xai_mode: bool = False
-    ) -> pd.DataFrame:
-        """
-        Ajusta el scaler y transforma en un solo paso. Conveniente
-        para el fold de entrenamiento.
-
-        Parameters
-        ----------
-        X : pd.DataFrame
-            Subconjunto de entrenamiento del fold.
-        xai_mode : bool
-            Ver transform().
-
-        Returns
-        -------
-        pd.DataFrame
-        """
+    def fit_transform(self, X: pd.DataFrame, xai_mode: bool = False) -> pd.DataFrame:
+        """Ajusta el scaler y transforma en un solo paso."""
         return self.fit(X).transform(X, xai_mode=xai_mode)
 
-    # ------------------------------------------------------------------
     def save(self) -> Path:
-        """
-        Serializa ambos scalers en disco bajo SCALERS_DIR.
-
-        El archivo se nombra: scaler_{dataset_tag}_fold{fold_id}.pkl
-
-        Returns
-        -------
-        Path
-            Ruta del archivo guardado.
-        """
+        """Serializa el preprocessor actual."""
         self._check_fitted()
         SCALERS_DIR.mkdir(parents=True, exist_ok=True)
-
+        
         path = SCALERS_DIR / f"scaler_{self.dataset_tag}_fold{self.fold_id}.pkl"
-        joblib.dump(
-            {
-                "scaler_model": self._scaler_model,
-                "scaler_xai"  : self._scaler_xai,
-                "fold_id"     : self.fold_id,
-                "dataset_tag" : self.dataset_tag,
-            },
-            path,
-        )
+        
+        joblib.dump({
+            "scaler_model": self._scaler_model,
+            "scaler_xai": self._scaler_xai,
+            "fold_id": self.fold_id,
+            "dataset_tag": self.dataset_tag
+        }, path)
+        
+        logger.debug(f"Preprocessor guardado en: {path.name}")
         return path
 
-    # ------------------------------------------------------------------
     @classmethod
-    def load(cls, fold_id, dataset_tag: str = "full") -> "Preprocessor":
-        """
-        Reconstituye un Preprocessor desde un archivo serializado.
-
-        Parameters
-        ----------
-        fold_id : int or str
-            Identificador del fold a recuperar.
-        dataset_tag : str
-            Etiqueta del dataset ('full' o 'clean').
-
-        Returns
-        -------
-        Preprocessor
-            Instancia con los scalers ya ajustados.
-        """
+    def load(cls, fold_id: str | int, dataset_tag: str = "full") -> "Preprocessor":
+        """Reconstituye un Preprocessor desde un archivo serializado."""
         path = SCALERS_DIR / f"scaler_{dataset_tag}_fold{fold_id}.pkl"
+        
+        if not path.exists():
+            logger.error(f"No se encontró el scaler serializado en: {path}")
+            raise FileNotFoundError(f"Scaler no encontrado: {path}")
+            
         data = joblib.load(path)
-
+        
         instance = cls(fold_id=data["fold_id"], dataset_tag=data["dataset_tag"])
         instance._scaler_model = data["scaler_model"]
-        instance._scaler_xai   = data["scaler_xai"]
-        instance._is_fitted    = True
+        instance._scaler_xai = data["scaler_xai"]
+        instance._is_fitted = True
+        
+        logger.info(f"Preprocessor cargado desde disco: {path.name}")
         return instance
 
-    # ------------------------------------------------------------------
     def _check_fitted(self) -> None:
         """Lanza un error si se intenta transformar antes de ajustar."""
         if not self._is_fitted:
-            raise RuntimeError(
-                "El Preprocessor no ha sido ajustado. Llama a fit() primero."
-            )
+            logger.error(f"Intento de usar transform() en Preprocessor sin entrenar (fold: {self.fold_id}).")
+            raise RuntimeError("El Preprocessor no ha sido ajustado. Llama a fit() primero.")
