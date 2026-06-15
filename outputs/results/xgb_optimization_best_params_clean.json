@@ -1,0 +1,17 @@
+{
+    "metric_optimized": "prauc",
+    "best_score": 0.4244966075336415,
+    "best_params": {
+        "n_estimators": 500,
+        "max_depth": 4,
+        "learning_rate": 0.062146802788793726,
+        "gamma": 2.8366117909076047,
+        "reg_lambda": 1.4941527517134665,
+        "reg_alpha": 0.028782418402341137,
+        "subsample": 0.7548969268082668,
+        "colsample_bytree": 0.664666844637559,
+        "min_child_weight": 4.664528765599512,
+        "max_delta_step": 8.442351850002819,
+        "max_bin": 256
+    }
+}

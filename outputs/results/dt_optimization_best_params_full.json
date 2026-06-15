@@ -1,0 +1,13 @@
+{
+    "metric_optimized": "prauc",
+    "best_score": 0.4049055778666206,
+    "best_params": {
+        "criterion": "entropy",
+        "max_depth": 9,
+        "min_samples_split": 4,
+        "min_samples_leaf": 18,
+        "max_features": 0.9371830385321471,
+        "min_impurity_decrease": 3.7788566333162195e-06,
+        "ccp_alpha": 5.1025996760943756e-05
+    }
+}

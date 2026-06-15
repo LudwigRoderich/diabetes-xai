@@ -1,0 +1,72 @@
+[2026-06-14 14:31:04] [INFO] [data_loader.load:40] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-06-14 14:31:04] [DEBUG] [data_loader.load:42] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-06-14 14:31:04] [INFO] [data_loader.split:54] - Iniciando partición estratificada (Train, Val, Tune)...
+[2026-06-14 14:31:05] [DEBUG] [data_loader.split:73] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-06-14 14:31:05] [INFO] [data_loader.get_cv_folds:87] - Generando 5 pliegues estratificados para CV.
+[14/06 14:33:46] [INFO] [data_loader.py:40] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[14/06 14:33:46] [DEBUG] [data_loader.py:42] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[14/06 14:33:46] [INFO] [data_loader.py:54] - Iniciando partición estratificada (Train, Val, Tune)...
+[14/06 14:33:47] [DEBUG] [data_loader.py:73] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[14/06 14:33:47] [INFO] [data_loader.py:87] - Generando 5 pliegues estratificados para CV.
+[14/06 14:34:27] [INFO] [data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[14/06 14:34:28] [DEBUG] [data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[14/06 14:34:28] [INFO] [data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[14/06 14:34:28] [DEBUG] [data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[14/06 14:34:28] [INFO] [data_loader.py:87][get_cv_folds] - Generando 5 pliegues estratificados para CV.
+[14/06 14:40:36] [INFO] [data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[14/06 14:40:37] [DEBUG] [data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[14/06 14:40:37] [INFO] [data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[14/06 14:40:37] [DEBUG] [data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[14/06 14:40:37] [INFO] [data_loader.py:87][get_cv_folds] - Generando 5 pliegues estratificados para CV.
+[14/06 14:40:37] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[14/06 14:40:37] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 0.
+[14/06 14:40:37] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold0.pkl
+[14/06 15:00:06] [INFO] [data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[14/06 15:00:07] [DEBUG] [data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[14/06 15:00:07] [INFO] [data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[14/06 15:00:07] [DEBUG] [data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[14/06 15:00:07] [DEBUG] [trainer.py:42][__init__] - Trainer inicializado para dataset: full
+[14/06 15:00:07] [INFO] [data_loader.py:87][get_cv_folds] - Generando 5 pliegues estratificados para CV.
+[14/06 15:00:07] [INFO] [trainer.py:51][run_cv] - Iniciando Validación Cruzada (5 folds) — dataset: full
+[14/06 15:00:07] [INFO] [trainer.py:54][run_cv] - [CV] Procesando Fold 1/5...
+[14/06 15:00:07] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[14/06 15:00:07] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 0.
+[14/06 15:00:07] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold0.pkl
+[14/06 15:00:07] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.58094646099488), np.float64(1.0): np.float64(3.5884611498433867)}
+[14/06 15:00:07] [DEBUG] [trainer.py:74][run_cv] - Fold 1: Entrenando modelos (DT & XGBoost)
+[14/06 15:00:12] [DEBUG] [evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[14/06 15:00:12] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4034
+[14/06 15:00:13] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4299
+[14/06 15:00:13] [INFO] [trainer.py:54][run_cv] - [CV] Procesando Fold 2/5...
+[14/06 15:00:13] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 1 | dataset: full
+[14/06 15:00:13] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 1.
+[14/06 15:00:13] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold1.pkl
+[14/06 15:00:13] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.58094646099488), np.float64(1.0): np.float64(3.5884611498433867)}
+[14/06 15:00:13] [DEBUG] [trainer.py:74][run_cv] - Fold 2: Entrenando modelos (DT & XGBoost)
+[14/06 15:00:17] [DEBUG] [evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[14/06 15:00:17] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.3955
+[14/06 15:00:17] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4240
+[14/06 15:00:17] [INFO] [trainer.py:54][run_cv] - [CV] Procesando Fold 3/5...
+[14/06 15:00:17] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 2 | dataset: full
+[14/06 15:00:17] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 2.
+[14/06 15:00:17] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold2.pkl
+[14/06 15:00:17] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.58094646099488), np.float64(1.0): np.float64(3.5884611498433867)}
+[14/06 15:00:17] [DEBUG] [trainer.py:74][run_cv] - Fold 3: Entrenando modelos (DT & XGBoost)
+[14/06 15:00:23] [DEBUG] [evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[14/06 15:00:23] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4133
+[14/06 15:00:23] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4432
+[14/06 15:00:23] [INFO] [trainer.py:54][run_cv] - [CV] Procesando Fold 4/5...
+[14/06 15:00:23] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 3 | dataset: full
+[14/06 15:00:23] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 3.
+[14/06 15:00:23] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold3.pkl
+[14/06 15:00:23] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.580941709537324), np.float64(1.0): np.float64(3.5886424493507807)}
+[14/06 15:00:23] [DEBUG] [trainer.py:74][run_cv] - Fold 4: Entrenando modelos (DT & XGBoost)
+[14/06 15:00:28] [DEBUG] [evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[14/06 15:00:28] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.3969
+[14/06 15:00:28] [DEBUG] [evaluator.py:51][evaluate] - Evaluación completada: PR-AUC=0.4313
+[14/06 15:00:28] [INFO] [trainer.py:54][run_cv] - [CV] Procesando Fold 5/5...
+[14/06 15:00:28] [DEBUG] [preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 4 | dataset: full
+[14/06 15:00:28] [DEBUG] [preprocessor.py:40][fit] - Escaladores ajustados exitosamente para el fold 4.
+[14/06 15:00:28] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold4.pkl
+[14/06 15:00:28] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.580941709537324), np.float64(1.0): np.float64(3.5886424493507807)}
+[14/06 15:00:28] [DEBUG] [trainer.py:74][run_cv] - Fold 5: Entrenando modelos (DT & XGBoost)

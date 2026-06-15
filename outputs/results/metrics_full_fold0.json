@@ -1,0 +1,18 @@
+{
+  "fold_id": 0,
+  "dataset_tag": "full",
+  "metrics": {
+    "dt": {
+      "prauc": 0.4034148089498076,
+      "precision": 0.2941131615067866,
+      "recall": 0.7795068714632175,
+      "threshold": 0.5
+    },
+    "xgb": {
+      "prauc": 0.42990338626823504,
+      "precision": 0.0,
+      "recall": 0.0,
+      "threshold": 0.5
+    }
+  }
+}
