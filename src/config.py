@@ -4,12 +4,12 @@ Todos los módulos deben importar desde aquí para evitar valores hardcodeados.
 """
 
 import logging
+import os
 import sys
 from pathlib import Path
 
-# ===========================================================================
 # 1. Rutas base
-# ===========================================================================
+
 ROOT_DIR   = Path(__file__).resolve().parents[1]
 DATA_DIR   = ROOT_DIR / "data"
 OUTPUT_DIR = ROOT_DIR / "outputs"
@@ -19,14 +19,19 @@ SCALERS_DIR = OUTPUT_DIR / "scalers"
 RESULTS_DIR = OUTPUT_DIR / "results"
 FIGURES_DIR = OUTPUT_DIR / "figures"
 LOGS_DIR    = OUTPUT_DIR / "logs"
+XAI_DIR     = OUTPUT_DIR / "xai"
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
 RAW_DATA_PATH   = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015.csv"
 CLEAN_DATA_PATH = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv"
 
-# ===========================================================================
+CLUSTERS_DIR = RESULTS_DIR / "clusters"
+CLUSTERS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+
 # 2. Configuración del Logger
-# ===========================================================================
+
 def get_logger(name: str) -> logging.Logger:
     """
     Instancia y configura un logger formal para el módulo que lo solicite.
@@ -49,7 +54,7 @@ def get_logger(name: str) -> logging.Logger:
         )
         
         console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.INFO) # En terminal solo mostramos INFO o superior
+        console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(formatter)
         
         file_handler = logging.FileHandler(LOGS_DIR / "pipeline_execution.log", encoding="utf-8")
@@ -63,38 +68,31 @@ def get_logger(name: str) -> logging.Logger:
 
     return logger
 
-# ===========================================================================
 # 3. Semillas
-# ===========================================================================
+
 GLOBAL_SEED      = 314159           # semilla maestra
 SPLIT_SEED       = 271828           # estratificación holdout
 CV_SEED          = 141421           # generación de folds
 DT_SEED          = 7                # árbol de decisión
 XGBOOST_SEED     = 13               # XGBoost
 THRESHOLD_SEED   = 66616            # barrido de umbral
+PFI_SEED         = 123456           # Permutation Feature Importance
 
-# ===========================================================================
 # 4. Proporciones del split estratificado y Validación Cruzada
-# ===========================================================================
+
 TRAIN_SIZE = 0.70
 VAL_SIZE   = 0.20
-TUNE_SIZE  = 0.10   # holdout para tuning de hiperparámetros y umbral
-N_FOLDS    = 5      # CV estratificado sobre el conjunto de entrenamiento
+TUNE_SIZE  = 0.10
+N_FOLDS    = 5
 
-# ===========================================================================
 # 5. Variable objetivo y columnas
-# ===========================================================================
+
 TARGET_COL = "Diabetes_binary"
+CONTINUOUS_COLS = ["BMI", "MentHlth", "PhysHlth"] # Variables continuas/discretas que serán estandarizadas.
+ORDINAL_COLS = ["Age", "Education", "Income", "GenHlth"] # Variables ordinales que se escalan exclusivamente para los métodos XAI.
 
-# Variables continuas/discretas que serán estandarizadas.
-CONTINUOUS_COLS = ["BMI", "MentHlth", "PhysHlth"]
-
-# Variables ordinales que se escalan exclusivamente para los métodos XAI.
-ORDINAL_COLS = ["Age", "Education", "Income", "GenHlth"]
-
-# ===========================================================================
 # 6. Parámetros base de los modelos
-# ===========================================================================
+
 DT_BASE_PARAMS = {
     "criterion"   : "entropy",
     "max_depth"   : 10,
@@ -111,17 +109,15 @@ XGBOOST_BASE_PARAMS = {
     "random_state"    : XGBOOST_SEED,
 }
 
-# ===========================================================================
 # 7. Umbral de clasificación
-# ===========================================================================
+
 DEFAULT_THRESHOLD    = 0.5
 THRESHOLD_SEARCH_MIN = 0.01
 THRESHOLD_SEARCH_MAX = 0.99
 THRESHOLD_STEPS      = 120
 
-# ===========================================================================
 # 8. Espacios de búsqueda para Optimización Bayesiana (Optuna)
-# ===========================================================================
+
 OPTUNA_TRIALS    = 1500
 OPTUNA_PATIENCE  = 100
 OPTUNA_TOLERANCE = 0.001
@@ -160,3 +156,21 @@ def xgb_param_space(trial) -> dict:
         "eval_metric": "aucpr",
         "random_state": XGBOOST_SEED,
     }
+
+# 9. Configuración de Clustering
+CLUSTER_TOLERANCE = float(1e-4)
+DEFAULT_K_CLUSTERS = 5
+CLUSTER_SEED = 1860
+MAX_CLUSTER_SAMPLE_SIZE = 3000
+
+CLARA_SAMPLE_FRAC = 0.2
+CLARA_MAX_SAMPLE = 3000
+CLARA_N_SAMPLES = 5
+
+# 10. Configuración XAI
+
+# Permutation Feature Importance (PFI)
+PFI_NJOBS     = -1
+PFI_N_REPEATS = 50
+PFI_SCORING    = "average_precision" 
+PFI_MAX_SAMPLES = 1.0 

@@ -1,0 +1,32 @@
+{
+    "n_total": 253680,
+    "sample_size": 3000,
+    "n_iterations": 5,
+    "iterations_data": [
+        {
+            "iteration": 1,
+            "cost": 0.14091791212558746,
+            "is_best": true
+        },
+        {
+            "iteration": 2,
+            "cost": 0.14329956471920013,
+            "is_best": false
+        },
+        {
+            "iteration": 3,
+            "cost": 0.15233905613422394,
+            "is_best": false
+        },
+        {
+            "iteration": 4,
+            "cost": 0.14758814871311188,
+            "is_best": false
+        },
+        {
+            "iteration": 5,
+            "cost": 0.14808867871761322,
+            "is_best": false
+        }
+    ]
+}

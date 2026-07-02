@@ -1,0 +1,56 @@
+{
+    "algorithm": "clara",
+    "k_range": [
+        5,
+        15
+    ],
+    "eval_sample_size": 3000,
+    "results": [
+        {
+            "k": 5,
+            "silhouette_score": -0.024844960788201035
+        },
+        {
+            "k": 6,
+            "silhouette_score": -0.034782140474265553
+        },
+        {
+            "k": 7,
+            "silhouette_score": -0.053504583303631004
+        },
+        {
+            "k": 8,
+            "silhouette_score": -0.07643805571477909
+        },
+        {
+            "k": 9,
+            "silhouette_score": -0.06307808534840563
+        },
+        {
+            "k": 10,
+            "silhouette_score": -0.07717535866948409
+        },
+        {
+            "k": 11,
+            "silhouette_score": -0.0894831023891627
+        },
+        {
+            "k": 12,
+            "silhouette_score": -0.12663676591842948
+        },
+        {
+            "k": 13,
+            "silhouette_score": -0.1717296500935725
+        },
+        {
+            "k": 14,
+            "silhouette_score": -0.17230781252400854
+        },
+        {
+            "k": 15,
+            "silhouette_score": -0.08825900107977737
+        }
+    ],
+    "best_k": 5,
+    "best_score": -0.024844960788201035
+}

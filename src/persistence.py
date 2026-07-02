@@ -7,7 +7,7 @@ import pandas as pd
 from pathlib import Path
 from typing import Any
 
-from src.config import MODELS_DIR, RESULTS_DIR, get_logger
+from src.config import MODELS_DIR, RESULTS_DIR, CLUSTERS_DIR, get_logger
 
 logger = get_logger(__name__)
 
@@ -164,3 +164,17 @@ class Persistence:
         )
         logger.debug(f"Se encontraron {len(results_found)} archivos de resultados.")
         return results_found
+    
+    @staticmethod
+    def save_cluster_model(model: any, algorithm: str, k: int, dataset_tag: str, seed: int):
+        filename = f"cluster_model_{algorithm}_k{k}_seed{seed}_{dataset_tag}.pkl"
+        path = CLUSTERS_DIR / filename
+        joblib.dump(model, path)
+        logger.debug(f"Modelo de clustering guardado en: {path}")
+
+    @staticmethod
+    def save_cluster_assignments(df_assignments: pd.DataFrame, algorithm: str, k: int, dataset_tag: str, seed: int):
+        filename = f"cluster_assignments_{algorithm}_k{k}_seed{seed}_{dataset_tag}.csv"
+        path = CLUSTERS_DIR / filename
+        df_assignments.to_csv(path, index=False)
+        logger.debug(f"Asignaciones de clúster guardadas en: {path}")

@@ -70,3 +70,530 @@
 [14/06 15:00:28] [DEBUG] [preprocessor.py:83][save] - Preprocessor guardado en: scaler_full_fold4.pkl
 [14/06 15:00:28] [DEBUG] [trainer.py:157][_compute_weights] - Pesos de clase calculados: {np.float64(0.0): np.float64(0.580941709537324), np.float64(1.0): np.float64(3.5886424493507807)}
 [14/06 15:00:28] [DEBUG] [trainer.py:74][run_cv] - Fold 5: Entrenando modelos (DT & XGBoost)
+[20/06 14:16:55] [INFO] [__main__.py:135][<module>] - === Etapa XAI Iniciada ===
+[20/06 14:16:55] [INFO] [__main__.py:64][load_xai_artifacts] - Cargando artefactos XAI | Dataset: FULL
+[20/06 14:16:55] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[20/06 14:16:55] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[20/06 14:16:55] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[20/06 14:16:56] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[20/06 14:16:56] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[20/06 14:16:56] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[20/06 14:16:56] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: dt_full_foldfinal.pkl
+[20/06 14:16:56] [DEBUG] [__main__.py:78][load_xai_artifacts] - Modelo DT (full) cargado.
+[20/06 14:16:57] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_foldfinal.pkl
+[20/06 14:16:57] [DEBUG] [__main__.py:78][load_xai_artifacts] - Modelo XGB (full) cargado.
+[20/06 14:16:57] [DEBUG] [src.xai.pfi.py:43][__init__] - PermutationImportanceAnalyzer inicializado — modelo: DT | dataset: full | n_repeats: 30
+[20/06 14:16:57] [INFO] [src.xai.pfi.py:58][compute] - [PFI] Ejecutando análisis — modelo: DT | dataset: full | instancias: 50737 | features: 21
+[20/06 14:17:03] [INFO] [src.xai.pfi.py:90][compute] - [PFI] Completado — feature más importante: 'GenHlth' (mean=0.0819, std=0.0022)
+[20/06 14:17:03] [INFO] [__main__.py:125][run_pfi] - [PFI] Resultados guardados en: pfi_results_dt_full.csv
+[20/06 14:17:03] [INFO] [__main__.py:156][<module>] - === Etapa XAI Completada ===
+[21/06 14:26:01] [INFO] [__main__.py:133][<module>] - === Etapa XAI Iniciada ===
+[21/06 14:26:01] [INFO] [__main__.py:38][load_xai_artifacts] - Cargando artefactos XAI | Dataset: FULL
+[21/06 14:26:01] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[21/06 14:26:02] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[21/06 14:26:02] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[21/06 14:26:02] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[21/06 14:26:03] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[21/06 14:26:03] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[21/06 14:26:03] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: dt_full_foldfinal.pkl
+[21/06 14:26:03] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo DT (full) cargado.
+[21/06 14:26:03] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_foldfinal.pkl
+[21/06 14:26:03] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo XGB (full) cargado.
+[21/06 14:26:03] [INFO] [__main__.py:86][extract_intrinsic_importance] - [Intrinsic] Extrayendo importancia base de DT (full)...
+[21/06 14:26:03] [INFO] [__main__.py:100][extract_intrinsic_importance] - [Intrinsic] Referencia interpretativa guardada en: intrinsic_importance_dt_full.csv
+[21/06 14:26:03] [INFO] [__main__.py:160][<module>] - === Etapa XAI Completada ===
+[21/06 14:27:48] [INFO] [__main__.py:133][<module>] - === Etapa XAI Iniciada ===
+[21/06 14:27:48] [INFO] [__main__.py:38][load_xai_artifacts] - Cargando artefactos XAI | Dataset: FULL
+[21/06 14:27:48] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[21/06 14:27:49] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[21/06 14:27:49] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[21/06 14:27:49] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[21/06 14:27:49] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[21/06 14:27:49] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[21/06 14:27:49] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: dt_full_foldfinal.pkl
+[21/06 14:27:49] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo DT (full) cargado.
+[21/06 14:27:49] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_foldfinal.pkl
+[21/06 14:27:49] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo XGB (full) cargado.
+[21/06 14:27:49] [INFO] [__main__.py:86][extract_intrinsic_importance] - [Intrinsic] Extrayendo importancia base de XGB (full)...
+[21/06 14:27:49] [INFO] [__main__.py:100][extract_intrinsic_importance] - [Intrinsic] Referencia interpretativa guardada en: intrinsic_importance_xgb_full.csv
+[21/06 14:27:49] [INFO] [__main__.py:158][<module>] - === Etapa XAI Completada ===
+[21/06 15:44:24] [INFO] [__main__.py:133][<module>] - === Etapa XAI Iniciada ===
+[21/06 15:44:24] [INFO] [__main__.py:38][load_xai_artifacts] - Cargando artefactos XAI | Dataset: FULL
+[21/06 15:44:24] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[21/06 15:44:24] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[21/06 15:44:24] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[21/06 15:44:25] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[21/06 15:44:25] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[21/06 15:44:25] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[21/06 15:44:25] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: dt_full_foldfinal.pkl
+[21/06 15:44:25] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo DT (full) cargado.
+[21/06 15:44:25] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_foldfinal.pkl
+[21/06 15:44:25] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo XGB (full) cargado.
+[21/06 15:44:25] [DEBUG] [src.xai.pfi.py:43][__init__] - PermutationImportanceAnalyzer inicializado — modelo: XGB | dataset: full | n_repeats: 30
+[21/06 15:44:25] [INFO] [src.xai.pfi.py:58][compute] - [PFI] Ejecutando análisis — modelo: XGB | dataset: full | instancias: 50737 | features: 21
+[21/06 15:45:46] [INFO] [src.xai.pfi.py:90][compute] - [PFI] Completado — feature más importante: 'BMI' (mean=0.0796, std=0.0027)
+[21/06 15:45:46] [INFO] [__main__.py:124][run_pfi] - [PFI] Resultados guardados en: pfi_results_xgb_full.csv
+[21/06 15:45:46] [INFO] [__main__.py:158][<module>] - === Etapa XAI Completada ===
+[21/06 21:03:40] [INFO] [__main__.py:133][<module>] - === Etapa XAI Iniciada ===
+[21/06 21:03:40] [INFO] [__main__.py:38][load_xai_artifacts] - Cargando artefactos XAI | Dataset: FULL
+[21/06 21:03:40] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[21/06 21:03:40] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[21/06 21:03:40] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[21/06 21:03:41] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[21/06 21:03:41] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[21/06 21:03:41] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[21/06 21:03:41] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: dt_full_foldfinal.pkl
+[21/06 21:03:41] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo DT (full) cargado.
+[21/06 21:03:41] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_foldfinal.pkl
+[21/06 21:03:41] [DEBUG] [__main__.py:55][load_xai_artifacts] - Modelo XGB (full) cargado.
+[21/06 21:03:41] [DEBUG] [src.xai.pfi.py:50][__init__] - PermutationImportanceAnalyzer inicializado — modelo: DT | dataset: full | n_repeats: 50
+[21/06 21:03:41] [INFO] [src.xai.pfi.py:65][compute] - [PFI] Ejecutando análisis — modelo: DT | dataset: full | instancias: 50737 | features: 21
+[21/06 21:03:49] [INFO] [src.xai.pfi.py:98][compute] - [PFI] Completado — feature más importante: 'GenHlth' (mean=0.0822, std=0.0027)
+[21/06 21:03:49] [INFO] [__main__.py:124][run_pfi] - [PFI] Resultados guardados en: pfi_results_dt_full.csv
+[21/06 21:03:49] [DEBUG] [src.xai.pfi.py:50][__init__] - PermutationImportanceAnalyzer inicializado — modelo: XGB | dataset: full | n_repeats: 50
+[21/06 21:03:49] [INFO] [src.xai.pfi.py:65][compute] - [PFI] Ejecutando análisis — modelo: XGB | dataset: full | instancias: 50737 | features: 21
+[21/06 21:05:51] [INFO] [src.xai.pfi.py:98][compute] - [PFI] Completado — feature más importante: 'BMI' (mean=0.0793, std=0.0027)
+[21/06 21:05:51] [INFO] [__main__.py:124][run_pfi] - [PFI] Resultados guardados en: pfi_results_xgb_full.csv
+[21/06 21:05:51] [INFO] [__main__.py:158][<module>] - === Etapa XAI Completada ===
+[27/06 17:50:56] [INFO] [__main__.py:92][<module>] - === Control de Clustering e Inferencia de Radios ===
+[27/06 17:50:56] [INFO] [__main__.py:30][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[27/06 17:50:56] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[27/06 17:50:57] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[27/06 17:50:57] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[27/06 17:50:57] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[27/06 17:50:57] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[27/06 17:50:57] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[27/06 19:29:39] [INFO] [__main__.py:92][<module>] - === Control de Clustering e Inferencia de Radios ===
+[27/06 19:29:39] [INFO] [__main__.py:30][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[27/06 19:29:39] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[27/06 19:29:40] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[27/06 19:29:40] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[27/06 19:29:40] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[27/06 19:29:40] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[27/06 19:29:40] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[27/06 19:33:44] [INFO] [__main__.py:92][<module>] - === Control de Clustering e Inferencia de Radios ===
+[27/06 19:33:44] [INFO] [__main__.py:30][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[27/06 19:33:44] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[27/06 19:33:45] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[27/06 19:33:45] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[27/06 19:33:45] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[27/06 19:33:45] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[27/06 19:33:45] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[27/06 19:33:45] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 2000
+[27/06 19:33:53] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1445
+[27/06 19:34:01] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1523
+[27/06 19:34:09] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1486
+[27/06 19:34:17] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1522
+[27/06 19:34:24] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1528
+[27/06 19:34:25] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k5_seed1860_full.csv
+[27/06 19:34:25] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k5_seed1860_full.pkl
+[27/06 19:34:25] [INFO] [__main__.py:86][run_clustering] - Proceso concluido exitosamente para full. Metadatos geométricos almacenados.
+[27/06 19:34:25] [INFO] [__main__.py:95][<module>] - === Finalización del Proceso Geométrico ===
+[29/06 14:18:53] [INFO] [__main__.py:92][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 14:18:53] [INFO] [__main__.py:30][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 14:18:53] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 14:18:54] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 14:18:54] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 14:18:54] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 14:18:55] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 14:18:55] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 14:18:55] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 2000
+[29/06 14:19:03] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1445
+[29/06 14:19:11] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1523
+[29/06 14:19:20] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1486
+[29/06 14:19:27] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1522
+[29/06 14:19:35] [DEBUG] [src.clusterizer.py:76][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1528
+[29/06 14:19:35] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k5_seed1860_full.csv
+[29/06 14:19:35] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k5_seed1860_full.pkl
+[29/06 14:19:35] [INFO] [__main__.py:86][run_clustering] - Proceso concluido exitosamente para full. Metadatos geométricos almacenados.
+[29/06 14:19:35] [INFO] [__main__.py:95][<module>] - === Finalización del Proceso Geométrico ===
+[29/06 15:36:37] [INFO] [__main__.py:93][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 15:36:37] [INFO] [__main__.py:31][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 15:36:37] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 15:36:38] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 15:36:38] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 15:36:39] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 15:36:39] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 15:36:39] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 15:36:39] [INFO] [src.clusterizer.py:86][optimize_k] - Optimizando cantidad de clústeres en el rango (5, 15)...
+[29/06 15:36:39] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:36:41] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1566
+[29/06 15:36:44] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1600
+[29/06 15:36:47] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1536
+[29/06 15:36:49] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1462
+[29/06 15:36:52] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1562
+[29/06 15:36:52] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=5 | Silhouette Score: -0.0387
+[29/06 15:36:52] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:36:55] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1573
+[29/06 15:36:58] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 15:37:00] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1525
+[29/06 15:37:03] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1420
+[29/06 15:37:05] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1512
+[29/06 15:37:05] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=6 | Silhouette Score: -0.0315
+[29/06 15:37:05] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:37:08] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1484
+[29/06 15:37:11] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1422
+[29/06 15:37:13] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1509
+[29/06 15:37:16] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1415
+[29/06 15:37:19] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1435
+[29/06 15:37:19] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=7 | Silhouette Score: -0.0514
+[29/06 15:37:19] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:37:21] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1477
+[29/06 15:37:24] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1397
+[29/06 15:37:27] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1508
+[29/06 15:37:29] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1358
+[29/06 15:37:32] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1403
+[29/06 15:37:32] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=8 | Silhouette Score: -0.0657
+[29/06 15:37:32] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:37:35] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1469
+[29/06 15:37:38] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1389
+[29/06 15:37:40] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1472
+[29/06 15:37:43] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1340
+[29/06 15:37:46] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1400
+[29/06 15:37:46] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=9 | Silhouette Score: -0.0510
+[29/06 15:37:46] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:37:49] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1488
+[29/06 15:37:51] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1367
+[29/06 15:37:54] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1461
+[29/06 15:37:56] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1311
+[29/06 15:37:59] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1398
+[29/06 15:37:59] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=10 | Silhouette Score: -0.0976
+[29/06 15:37:59] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:38:02] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1482
+[29/06 15:38:05] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1362
+[29/06 15:38:07] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1401
+[29/06 15:38:10] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1313
+[29/06 15:38:12] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1424
+[29/06 15:38:12] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=11 | Silhouette Score: -0.1345
+[29/06 15:38:12] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:38:15] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1407
+[29/06 15:38:18] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1299
+[29/06 15:38:21] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1395
+[29/06 15:38:23] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1342
+[29/06 15:38:26] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1421
+[29/06 15:38:26] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=12 | Silhouette Score: -0.0627
+[29/06 15:38:26] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:38:29] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1396
+[29/06 15:38:31] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1332
+[29/06 15:38:34] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1452
+[29/06 15:38:36] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1335
+[29/06 15:38:39] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1443
+[29/06 15:38:39] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=13 | Silhouette Score: -0.0705
+[29/06 15:38:39] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:38:42] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1469
+[29/06 15:38:45] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1277
+[29/06 15:38:48] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1416
+[29/06 15:38:50] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1302
+[29/06 15:38:53] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1442
+[29/06 15:38:53] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=14 | Silhouette Score: -0.0711
+[29/06 15:38:53] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:38:56] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1375
+[29/06 15:38:58] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1302
+[29/06 15:39:01] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1389
+[29/06 15:39:04] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1302
+[29/06 15:39:06] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1438
+[29/06 15:39:06] [INFO] [src.clusterizer.py:108][optimize_k] - Evaluación: k=15 | Silhouette Score: -0.0828
+[29/06 15:39:06] [INFO] [src.clusterizer.py:114][optimize_k] - Configuración seleccionada: k=6 (Silueta Máxima: -0.0315)
+[29/06 15:39:06] [INFO] [src.clusterizer.py:48][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 15:39:09] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1573
+[29/06 15:39:12] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 15:39:14] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1525
+[29/06 15:39:17] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1420
+[29/06 15:39:19] [DEBUG] [src.clusterizer.py:73][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1512
+[29/06 15:39:20] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k6_seed1860_full.csv
+[29/06 15:39:20] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k6_seed1860_full.pkl
+[29/06 15:39:20] [INFO] [__main__.py:87][run_clustering] - Proceso concluido exitosamente para full. Metadatos geométricos almacenados.
+[29/06 15:39:20] [INFO] [__main__.py:96][<module>] - === Finalización del Proceso Geométrico ===
+[29/06 16:06:48] [INFO] [__main__.py:105][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 16:06:48] [INFO] [__main__.py:33][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 16:06:48] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 16:06:49] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 16:06:49] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 16:06:49] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 16:06:49] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 16:06:49] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 16:06:49] [INFO] [src.clusterizer.py:100][optimize_k] - Optimizando cantidad de clústeres en el rango (5, 15)...
+[29/06 16:06:49] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:06:52] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1566
+[29/06 16:06:55] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1600
+[29/06 16:06:58] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1536
+[29/06 16:07:00] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1462
+[29/06 16:07:03] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1562
+[29/06 16:07:03] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=5 | Silhouette Score: -0.0387
+[29/06 16:07:03] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:07:06] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1573
+[29/06 16:07:09] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 16:07:12] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1525
+[29/06 16:07:14] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1420
+[29/06 16:07:17] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1512
+[29/06 16:07:17] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=6 | Silhouette Score: -0.0315
+[29/06 16:07:17] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:07:20] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1484
+[29/06 16:07:23] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1422
+[29/06 16:07:26] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1509
+[29/06 16:07:28] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1415
+[29/06 16:07:31] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1435
+[29/06 16:07:31] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=7 | Silhouette Score: -0.0514
+[29/06 16:07:31] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:07:34] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1477
+[29/06 16:07:37] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1397
+[29/06 16:07:40] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1508
+[29/06 16:07:43] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1358
+[29/06 16:07:45] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1403
+[29/06 16:07:46] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=8 | Silhouette Score: -0.0657
+[29/06 16:07:46] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:07:48] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1469
+[29/06 16:07:51] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1389
+[29/06 16:07:54] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1472
+[29/06 16:07:57] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1340
+[29/06 16:07:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1400
+[29/06 16:07:59] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=9 | Silhouette Score: -0.0510
+[29/06 16:07:59] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:08:02] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1488
+[29/06 16:08:05] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1367
+[29/06 16:08:08] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1461
+[29/06 16:08:10] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1311
+[29/06 16:08:13] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1398
+[29/06 16:08:14] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=10 | Silhouette Score: -0.0976
+[29/06 16:08:14] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:08:16] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1482
+[29/06 16:08:19] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1362
+[29/06 16:08:22] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1401
+[29/06 16:08:25] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1313
+[29/06 16:08:27] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1424
+[29/06 16:08:28] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=11 | Silhouette Score: -0.1345
+[29/06 16:08:28] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:08:30] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1407
+[29/06 16:08:33] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1299
+[29/06 16:08:36] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1395
+[29/06 16:08:39] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1342
+[29/06 16:08:41] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1421
+[29/06 16:08:42] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=12 | Silhouette Score: -0.0627
+[29/06 16:08:42] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:08:44] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1396
+[29/06 16:08:47] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1332
+[29/06 16:08:50] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1452
+[29/06 16:08:53] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1335
+[29/06 16:08:56] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1443
+[29/06 16:08:56] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=13 | Silhouette Score: -0.0705
+[29/06 16:08:56] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:08:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1469
+[29/06 16:09:02] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1277
+[29/06 16:09:04] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1416
+[29/06 16:09:07] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1302
+[29/06 16:09:10] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1442
+[29/06 16:09:10] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=14 | Silhouette Score: -0.0711
+[29/06 16:09:10] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:09:13] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1375
+[29/06 16:09:16] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1302
+[29/06 16:09:18] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1389
+[29/06 16:09:21] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1302
+[29/06 16:09:24] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1438
+[29/06 16:09:24] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=15 | Silhouette Score: -0.0828
+[29/06 16:09:24] [INFO] [src.clusterizer.py:150][optimize_k] - Configuración seleccionada: k=6 (Silueta Máxima: -0.0315)
+[29/06 16:09:27] [INFO] [src.clusterizer.py:171][optimize_k] - Gráfico de optimización guardado en C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\silhouette_optimization.png
+[29/06 16:09:27] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:09:30] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1573
+[29/06 16:09:33] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 16:09:35] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1525
+[29/06 16:09:38] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1420
+[29/06 16:09:41] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1512
+[29/06 16:09:41] [INFO] [__main__.py:74][run_clustering] - Metadatos geométricos guardados en C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_metadata_full_k6.json
+[29/06 16:09:41] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k6_seed1860_full.csv
+[29/06 16:09:41] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k6_seed1860_full.pkl
+[29/06 16:09:41] [INFO] [__main__.py:92][run_clustering] - Proceso concluido exitosamente para full.
+[29/06 16:09:41] [INFO] [__main__.py:108][<module>] - === Finalización del Proceso Geométrico ===
+[29/06 16:10:26] [INFO] [__main__.py:105][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 16:10:26] [INFO] [__main__.py:33][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 16:10:26] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 16:10:27] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 16:10:27] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 16:10:27] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 16:10:27] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 16:10:27] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 16:10:27] [INFO] [src.clusterizer.py:100][optimize_k] - Optimizando cantidad de clústeres en el rango (5, 15)...
+[29/06 16:10:27] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:10:36] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1470
+[29/06 16:10:45] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1542
+[29/06 16:10:54] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1536
+[29/06 16:11:03] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1424
+[29/06 16:11:12] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1490
+[29/06 16:11:12] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=5 | Silhouette Score: -0.0254
+[29/06 16:11:12] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:11:21] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1409
+[29/06 16:11:30] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 16:11:39] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1523
+[29/06 16:11:48] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1476
+[29/06 16:11:57] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1481
+[29/06 16:11:57] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=6 | Silhouette Score: -0.0358
+[29/06 16:11:57] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:12:06] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1403
+[29/06 16:12:19] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1432
+[29/06 16:12:28] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1510
+[29/06 16:12:38] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1480
+[29/06 16:12:47] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1481
+[29/06 16:12:47] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=7 | Silhouette Score: -0.0514
+[29/06 16:12:47] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:12:57] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1393
+[29/06 16:13:07] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1410
+[29/06 16:13:17] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1432
+[29/06 16:13:26] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1402
+[29/06 16:13:35] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1470
+[29/06 16:13:35] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=8 | Silhouette Score: -0.0758
+[29/06 16:13:35] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:13:44] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1392
+[29/06 16:13:53] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1385
+[29/06 16:14:02] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1496
+[29/06 16:14:11] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1358
+[29/06 16:14:21] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1447
+[29/06 16:14:21] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=9 | Silhouette Score: -0.0609
+[29/06 16:14:21] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:14:30] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1376
+[29/06 16:14:39] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1363
+[29/06 16:14:48] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1350
+[29/06 16:14:57] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1349
+[29/06 16:15:06] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1365
+[29/06 16:15:06] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=10 | Silhouette Score: -0.0752
+[29/06 16:15:06] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:15:15] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1399
+[29/06 16:15:25] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1354
+[29/06 16:15:34] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1380
+[29/06 16:15:44] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1298
+[29/06 16:15:53] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1384
+[29/06 16:15:53] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=11 | Silhouette Score: -0.0905
+[29/06 16:15:53] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:16:03] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1390
+[29/06 16:16:12] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1343
+[29/06 16:16:22] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1378
+[29/06 16:16:31] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1306
+[29/06 16:16:41] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1329
+[29/06 16:16:41] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=12 | Silhouette Score: -0.1345
+[29/06 16:16:41] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:16:50] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1398
+[29/06 16:16:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1316
+[29/06 16:17:08] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1346
+[29/06 16:17:18] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1288
+[29/06 16:17:28] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1332
+[29/06 16:17:28] [INFO] [src.clusterizer.py:133][optimize_k] - Evaluación: k=13 | Silhouette Score: -0.1764
+[29/06 16:17:28] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:17:37] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1391
+[29/06 16:17:47] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1309
+[29/06 16:17:56] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1291
+[29/06 16:22:30] [INFO] [__main__.py:105][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 16:22:30] [INFO] [__main__.py:33][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 16:22:30] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 16:22:30] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 16:22:30] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 16:22:30] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 16:22:30] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 16:22:30] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 16:22:30] [INFO] [src.clusterizer.py:99][optimize_k] - Optimizando cantidad de clústeres en el rango (5, 15)...
+[29/06 16:22:31] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:22:36] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1470
+[29/06 16:22:42] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1542
+[29/06 16:22:47] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1536
+[29/06 16:22:53] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1424
+[29/06 16:22:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1490
+[29/06 16:22:59] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=5 | Silhouette Score: -0.0248
+[29/06 16:22:59] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:23:05] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1409
+[29/06 16:23:10] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 16:23:16] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1523
+[29/06 16:23:22] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1476
+[29/06 16:23:27] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1481
+[29/06 16:23:28] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=6 | Silhouette Score: -0.0348
+[29/06 16:23:28] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:23:33] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1403
+[29/06 16:23:39] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1432
+[29/06 16:23:45] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1510
+[29/06 16:23:50] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1480
+[29/06 16:23:56] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1481
+[29/06 16:23:56] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=7 | Silhouette Score: -0.0535
+[29/06 16:23:56] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:24:02] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1393
+[29/06 16:24:08] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1410
+[29/06 16:24:14] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1432
+[29/06 16:24:20] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1402
+[29/06 16:24:26] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1470
+[29/06 16:24:26] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=8 | Silhouette Score: -0.0764
+[29/06 16:24:26] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:24:31] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1392
+[29/06 16:24:37] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1385
+[29/06 16:24:43] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1496
+[29/06 16:24:49] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1358
+[29/06 16:24:55] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1447
+[29/06 16:24:55] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=9 | Silhouette Score: -0.0631
+[29/06 16:24:55] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:25:01] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1376
+[29/06 16:25:07] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1363
+[29/06 16:25:13] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1350
+[29/06 16:25:19] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1349
+[29/06 16:25:25] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1365
+[29/06 16:25:25] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=10 | Silhouette Score: -0.0772
+[29/06 16:25:25] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:25:31] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1399
+[29/06 16:25:36] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1354
+[29/06 16:25:42] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1380
+[29/06 16:25:48] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1298
+[29/06 16:25:54] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1384
+[29/06 16:25:54] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=11 | Silhouette Score: -0.0895
+[29/06 16:25:54] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:26:00] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1390
+[29/06 16:26:05] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1343
+[29/06 16:26:11] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1378
+[29/06 16:26:17] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1306
+[29/06 16:26:23] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1329
+[29/06 16:26:23] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=12 | Silhouette Score: -0.1266
+[29/06 16:26:23] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:26:29] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1398
+[29/06 16:26:35] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1316
+[29/06 16:26:41] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1346
+[29/06 16:26:47] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1288
+[29/06 16:26:52] [INFO] [__main__.py:105][<module>] - === Control de Clustering e Inferencia de Radios ===
+[29/06 16:26:52] [INFO] [__main__.py:33][run_clustering] - Iniciando flujo de clustering | Dataset: FULL
+[29/06 16:26:52] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[29/06 16:26:52] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[29/06 16:26:52] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[29/06 16:26:53] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[29/06 16:26:53] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: final | dataset: full
+[29/06 16:26:53] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_foldfinal.pkl
+[29/06 16:26:53] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:26:53] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1332
+[29/06 16:26:53] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=13 | Silhouette Score: -0.1717
+[29/06 16:26:53] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:26:58] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1409
+[29/06 16:26:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1391
+[29/06 16:27:04] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1433
+[29/06 16:27:05] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1309
+[29/06 16:27:10] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1523
+[29/06 16:27:11] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1291
+[29/06 16:27:16] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1476
+[29/06 16:27:17] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1285
+[29/06 16:27:23] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1481
+[29/06 16:27:23] [INFO] [__main__.py:74][run_clustering] - Metadatos geométricos guardados en C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_metadata_full_k6.json
+[29/06 16:27:23] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k6_seed1860_full.csv
+[29/06 16:27:23] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k6_seed1860_full.pkl
+[29/06 16:27:23] [INFO] [__main__.py:92][run_clustering] - Proceso concluido exitosamente para full.
+[29/06 16:27:23] [INFO] [__main__.py:108][<module>] - === Finalización del Proceso Geométrico ===
+[29/06 16:27:23] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1326
+[29/06 16:27:24] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=14 | Silhouette Score: -0.1723
+[29/06 16:27:24] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:27:29] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1325
+[29/06 16:27:35] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1303
+[29/06 16:27:41] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1268
+[29/06 16:27:46] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1280
+[29/06 16:27:52] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1317
+[29/06 16:27:53] [INFO] [src.clusterizer.py:132][optimize_k] - Evaluación: k=15 | Silhouette Score: -0.0883
+[29/06 16:27:53] [INFO] [src.clusterizer.py:149][optimize_k] - Configuración seleccionada: k=5 (Silueta Máxima: -0.0248)
+[29/06 16:27:53] [INFO] [src.clusterizer.py:170][optimize_k] - Gráfico de optimización guardado en C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\figures\silhouette_optimization.png
+[29/06 16:27:53] [INFO] [src.clusterizer.py:52][_run_clara_core] - Iniciando CLARA: 5 iteraciones con muestras de tamaño 3000
+[29/06 16:27:59] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 1/5 | Costo Gower: 0.1470
+[29/06 16:28:05] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 2/5 | Costo Gower: 0.1542
+[29/06 16:28:10] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 3/5 | Costo Gower: 0.1536
+[29/06 16:28:16] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 4/5 | Costo Gower: 0.1424
+[29/06 16:28:21] [DEBUG] [src.clusterizer.py:74][_run_clara_core] - CLARA Iteración 5/5 | Costo Gower: 0.1490
+[29/06 16:28:21] [INFO] [__main__.py:74][run_clustering] - Metadatos geométricos guardados en C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_metadata_full_k5.json
+[29/06 16:28:21] [DEBUG] [src.persistence.py:180][save_cluster_assignments] - Asignaciones de clúster guardadas en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_assignments_clara_k5_seed1860_full.csv
+[29/06 16:28:21] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k5_seed1860_full.pkl
+[29/06 16:28:21] [INFO] [__main__.py:92][run_clustering] - Proceso concluido exitosamente para full.
+[29/06 16:28:21] [INFO] [__main__.py:108][<module>] - === Finalización del Proceso Geométrico ===

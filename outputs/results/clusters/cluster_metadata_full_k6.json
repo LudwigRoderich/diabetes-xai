@@ -1,0 +1,44 @@
+{
+    "0": {
+        "medoid_original_index": 130888,
+        "radius_max": 0.5722960233688354,
+        "radius_mean": 0.13358190655708313,
+        "cluster_size": 66440,
+        "clara_cost": 0.14091791212558746
+    },
+    "1": {
+        "medoid_original_index": 127756,
+        "radius_max": 0.5909929871559143,
+        "radius_mean": 0.12680372595787048,
+        "cluster_size": 26611,
+        "clara_cost": 0.14091791212558746
+    },
+    "2": {
+        "medoid_original_index": 235683,
+        "radius_max": 0.568288266658783,
+        "radius_mean": 0.16830727458000183,
+        "cluster_size": 28956,
+        "clara_cost": 0.14091791212558746
+    },
+    "3": {
+        "medoid_original_index": 183297,
+        "radius_max": 0.6673073768615723,
+        "radius_mean": 0.1842682957649231,
+        "cluster_size": 47604,
+        "clara_cost": 0.14091791212558746
+    },
+    "4": {
+        "medoid_original_index": 132790,
+        "radius_max": 0.5405552983283997,
+        "radius_mean": 0.1526888608932495,
+        "cluster_size": 39735,
+        "clara_cost": 0.14091791212558746
+    },
+    "5": {
+        "medoid_original_index": 97711,
+        "radius_max": 0.45396825671195984,
+        "radius_mean": 0.08539703488349915,
+        "cluster_size": 44334,
+        "clara_cost": 0.14091791212558746
+    }
+}
