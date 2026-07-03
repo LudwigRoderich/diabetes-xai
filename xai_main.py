@@ -26,7 +26,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", choices=["dt", "xgb", "both"], default="xgb")
     parser.add_argument(
         "--method",
-        choices=["intrinsic", "pfi", "surrogate", "lime", "shap", "clustering", "all"],
+        choices=["intrinsic", "pfi", "surrogate", "lime", "shap", "all"],
         default="all",
         help="Método de explicabilidad a ejecutar. 'intrinsic' extrae la importancia base del modelo."
     )
@@ -151,8 +151,5 @@ if __name__ == "__main__":
 
         if args.method in ("shap", "all"):
             logger.info("[SHAP] Módulo pendiente de implementación.")
-
-        if args.method in ("clustering", "all"):
-            logger.info("[Clustering] Módulo pendiente de implementación.")
 
     logger.info("=== Etapa XAI Completada ===")

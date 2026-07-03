@@ -1,1 +1,1 @@
-optuna
+pandas sklearn xgboost joblib optuna

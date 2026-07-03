@@ -597,3 +597,515 @@
 [29/06 16:28:21] [DEBUG] [src.persistence.py:173][save_cluster_model] - Modelo de clustering guardado en: C:\Users\rluis\Códigos\Proyectos\diabetes-xai\outputs\results\clusters\cluster_model_clara_k5_seed1860_full.pkl
 [29/06 16:28:21] [INFO] [__main__.py:92][run_clustering] - Proceso concluido exitosamente para full.
 [29/06 16:28:21] [INFO] [__main__.py:108][<module>] - === Finalización del Proceso Geométrico ===
+[02/07 16:06:11] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[02/07 16:06:11] [INFO] [__main__.py:321][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[02/07 16:06:11] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[02/07 16:06:12] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[02/07 16:06:12] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[02/07 16:06:13] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[02/07 16:06:13] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[02/07 16:06:13] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[02/07 16:06:13] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[02/07 16:06:13] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[02/07 16:06:14] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_full.png
+[02/07 16:06:14] [INFO] [__main__.py:345][execute_plot_proba] - Histograma de probabilidades para 'full' generado correctamente.
+[03/07 13:37:50] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 13:37:50] [INFO] [__main__.py:321][execute_plot_proba] - Verificando estado de artefactos para el dataset: clean
+[03/07 13:37:50] [INFO] [src.data_loader.py:40][load] - Cargando dataset limpio: diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv
+[03/07 13:37:51] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (248461, 23)
+[03/07 13:37:51] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 13:37:51] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 173921 (70%), Val: 49693 (20%), Tune: 24847 (10%)
+[03/07 13:37:51] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_clean_fold0.pkl
+[03/07 13:37:51] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: clean
+[03/07 13:37:51] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_clean_fold0.pkl
+[03/07 13:37:51] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 13:37:53] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_clean.png
+[03/07 13:37:53] [INFO] [__main__.py:345][execute_plot_proba] - Histograma de probabilidades para 'clean' generado correctamente.
+[03/07 13:38:53] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 13:41:09] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 13:41:09] [INFO] [src.data_loader.py:40][load] - Cargando dataset limpio: diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv
+[03/07 13:41:10] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (248461, 23)
+[03/07 13:41:10] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 13:41:10] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 173921 (70%), Val: 49693 (20%), Tune: 24847 (10%)
+[03/07 13:41:10] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_clean_fold0.pkl
+[03/07 13:41:10] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 13:41:10] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 13:41:10] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.25]: 49513 observaciones.
+[03/07 13:41:10] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 13:44:39] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 13:44:39] [INFO] [src.data_loader.py:40][load] - Cargando dataset limpio: diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv
+[03/07 13:44:40] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (248461, 23)
+[03/07 13:44:40] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 13:44:41] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 173921 (70%), Val: 49693 (20%), Tune: 24847 (10%)
+[03/07 13:44:41] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_clean_fold0.pkl
+[03/07 13:44:41] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 13:44:41] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 13:44:41] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.25]: 49513 observaciones.
+[03/07 13:44:41] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 13:44:41] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 6506 observaciones encontradas.
+[03/07 13:44:41] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 13:46:24] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 13:46:24] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 13:46:25] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 13:46:25] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 13:46:26] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 13:46:26] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 13:46:26] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 13:46:26] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 13:46:26] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.35, 1.0]: 45 observaciones.
+[03/07 13:46:26] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 13:46:26] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 38 observaciones encontradas.
+[03/07 13:46:26] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:04:52] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:04:52] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:04:53] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:04:53] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:04:53] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:04:53] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:04:53] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:04:53] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:04:53] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.35, 1.0]: 45 observaciones.
+[03/07 14:04:53] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 14:04:53] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.7): 45 observaciones encontradas.
+[03/07 14:05:16] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:05:16] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:05:17] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:05:17] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:05:17] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:05:17] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:05:17] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:05:18] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:05:18] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.35, 1.0]: 45 observaciones.
+[03/07 14:05:18] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 14:05:18] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.7): 45 observaciones encontradas.
+[03/07 14:05:30] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:05:30] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:05:30] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:05:30] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:05:31] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:05:31] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:05:31] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:05:31] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:05:31] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.35, 1.0]: 45 observaciones.
+[03/07 14:05:31] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 14:05:31] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.7): 45 observaciones encontradas.
+[03/07 14:05:49] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:05:49] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:05:49] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:05:49] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:05:50] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:05:50] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:05:50] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:05:50] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:05:50] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.35, 1.0]: 45 observaciones.
+[03/07 14:05:50] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 14:05:50] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.7): 45 observaciones encontradas.
+[03/07 14:05:50] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:07:11] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:07:11] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:07:11] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:07:11] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:07:12] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:07:12] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:07:12] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:07:12] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:07:12] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.4]: 50736 observaciones.
+[03/07 14:07:12] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.3976
+[03/07 14:07:12] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.75): 50736 observaciones encontradas.
+[03/07 14:07:13] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:11:48] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:11:48] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:11:49] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:11:49] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:11:49] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:11:49] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:11:49] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:11:49] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:11:50] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.04]: 27578 observaciones.
+[03/07 14:11:50] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0200
+[03/07 14:11:50] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.75): 27578 observaciones encontradas.
+[03/07 14:11:50] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:12:18] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:12:18] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:12:18] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:12:18] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:12:19] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:12:19] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:12:19] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:12:19] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:12:19] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.04]: 27578 observaciones.
+[03/07 14:12:19] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0200
+[03/07 14:12:19] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.5): 27554 observaciones encontradas.
+[03/07 14:12:20] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:12:43] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:12:43] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:12:44] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:12:44] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:12:44] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:12:44] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:12:44] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:12:44] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:12:44] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.04]: 27578 observaciones.
+[03/07 14:12:44] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0200
+[03/07 14:12:44] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.25): 14368 observaciones encontradas.
+[03/07 14:12:45] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:16:42] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:16:42] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:16:43] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:16:43] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:16:43] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:16:43] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:16:43] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:16:43] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:16:44] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.025]: 22240 observaciones.
+[03/07 14:16:44] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0125
+[03/07 14:16:44] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 20566 observaciones encontradas.
+[03/07 14:16:44] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:17:35] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:17:35] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:17:35] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:17:35] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:17:36] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:17:36] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:17:36] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:17:36] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:17:36] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.025, 0.05]: 8562 observaciones.
+[03/07 14:17:36] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0375
+[03/07 14:17:36] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 7748 observaciones encontradas.
+[03/07 14:17:36] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:19:49] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:19:49] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:19:49] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:19:49] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:19:50] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:19:50] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:19:50] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:19:50] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:19:50] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.075]: 5800 observaciones.
+[03/07 14:19:50] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0675
+[03/07 14:19:50] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 2059 observaciones encontradas.
+[03/07 14:19:50] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:21:39] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:21:39] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:21:40] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:21:40] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:21:40] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:21:40] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:21:40] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:21:41] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:21:41] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 30802 observaciones.
+[03/07 14:21:41] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 14:21:41] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 29571 observaciones encontradas.
+[03/07 14:21:42] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:22:31] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:22:31] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:22:32] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:22:32] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:22:32] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:22:32] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:22:32] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:22:32] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:22:32] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 14:22:32] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 14:22:32] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 5556 observaciones encontradas.
+[03/07 14:22:33] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:23:07] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:23:07] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:23:07] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:23:07] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:23:08] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:23:08] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:23:08] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:23:08] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:23:08] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 14:23:08] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 14:23:08] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 1303 observaciones encontradas.
+[03/07 14:23:08] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:24:22] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:24:22] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:24:22] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:24:22] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:24:23] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:24:23] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:24:23] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:24:23] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:24:23] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 30802 observaciones.
+[03/07 14:24:23] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 14:24:23] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 29571 observaciones encontradas.
+[03/07 14:24:24] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:24:34] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:24:34] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:24:35] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:24:35] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:24:35] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:24:35] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:24:35] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:24:36] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:24:36] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 14:24:36] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 14:24:36] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 5556 observaciones encontradas.
+[03/07 14:24:36] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:24:56] [INFO] [__main__.py:356][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:24:56] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:24:57] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:24:57] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 14:24:57] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 14:24:57] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:24:57] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:24:57] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 14:24:57] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 14:24:57] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 14:24:57] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 1303 observaciones encontradas.
+[03/07 14:24:58] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 14:44:02] [INFO] [__main__.py:364][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 14:44:02] [INFO] [__main__.py:324][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 14:44:02] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 14:44:02] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 14:44:02] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 14:44:02] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 14:44:02] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 14:44:02] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 14:44:02] [ERROR] [__main__.py:356][execute_plot_proba] - Fallo durante la ejecución de plot_proba para full: feature_names mismatch: ['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income'] ['Diabetes_binary', 'HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income']
+training data did not have the following fields: Diabetes_binary
+[03/07 15:09:27] [INFO] [__main__.py:373][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:09:27] [INFO] [__main__.py:325][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 15:09:27] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:09:28] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:09:28] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:09:28] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 15:09:28] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 15:09:28] [ERROR] [__main__.py:365][execute_plot_proba] - Fallo durante la ejecución de plot_proba para full: could not convert string to float: 'BMI'
+[03/07 15:12:15] [INFO] [__main__.py:372][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:12:15] [INFO] [__main__.py:324][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 15:12:15] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:12:16] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:12:16] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:12:16] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 15:12:16] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 15:12:16] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:12:18] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_full.png
+[03/07 15:12:18] [INFO] [__main__.py:361][execute_plot_proba] - Histograma de probabilidades para 'full' generado correctamente.
+[03/07 15:13:29] [INFO] [__main__.py:372][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:13:29] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:13:30] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:13:30] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:13:30] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:13:32] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:13:32] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 154532 observaciones.
+[03/07 15:13:32] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 15:13:32] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 10809 observaciones encontradas.
+[03/07 15:13:32] [INFO] [__main__.py:159][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:14:18] [INFO] [__main__.py:372][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:14:18] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:14:19] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:14:19] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:14:19] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:14:22] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:14:22] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 48113 observaciones.
+[03/07 15:14:22] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 15:14:22] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 35258 observaciones encontradas.
+[03/07 15:14:22] [INFO] [__main__.py:159][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:27:19] [INFO] [__main__.py:370][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:27:19] [INFO] [__main__.py:324][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 15:27:19] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:27:20] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:27:20] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:27:20] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:27:20] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:27:20] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 15:27:20] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 15:27:20] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:27:21] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_full_val.png
+[03/07 15:27:21] [INFO] [__main__.py:359][execute_plot_proba] - Histograma de probabilidades para 'full' generado correctamente.
+[03/07 15:39:13] [INFO] [__main__.py:370][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:39:13] [INFO] [__main__.py:324][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 15:39:13] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:39:14] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:39:14] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:39:15] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:39:15] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:39:15] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 15:39:15] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 15:39:15] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:39:17] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_full_val.png
+[03/07 15:39:17] [INFO] [__main__.py:359][execute_plot_proba] - Histograma de probabilidades para 'full' generado correctamente.
+[03/07 15:40:50] [INFO] [__main__.py:370][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:40:50] [INFO] [__main__.py:324][execute_plot_proba] - Verificando estado de artefactos para el dataset: full
+[03/07 15:40:50] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:40:51] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:40:51] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:40:51] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:40:51] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:40:51] [DEBUG] [src.preprocessor.py:27][__init__] - Preprocessor inicializado -> fold: 0 | dataset: full
+[03/07 15:40:51] [INFO] [src.preprocessor.py:102][load] - Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[03/07 15:40:51] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:40:53] [DEBUG] [src.visualizer.py:18][_save_fig] - Figura guardada exitosamente: proba_hist_xgb_full_val.png
+[03/07 15:40:53] [INFO] [__main__.py:359][execute_plot_proba] - Histograma de probabilidades para 'full' generado correctamente.
+[03/07 15:44:36] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:44:36] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:44:37] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:44:37] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:44:37] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:44:37] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:44:37] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:44:38] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:44:38] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 30802 observaciones.
+[03/07 15:44:38] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 15:44:38] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 29571 observaciones encontradas.
+[03/07 15:44:39] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:45:50] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:45:50] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:45:51] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:45:51] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:45:51] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:45:51] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:45:51] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:45:52] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:45:52] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 15:45:52] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 15:45:52] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 5556 observaciones encontradas.
+[03/07 15:45:52] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:49:06] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:49:06] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:49:07] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:49:07] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:49:08] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:49:08] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:49:08] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:49:08] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:49:08] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 15:49:08] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 15:49:08] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 1303 observaciones encontradas.
+[03/07 15:49:08] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:52:18] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:52:18] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:52:19] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:52:19] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:52:19] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:52:19] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:52:19] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:52:20] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:52:20] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 15:52:20] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 15:52:20] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.5): 9518 observaciones encontradas.
+[03/07 15:52:20] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:52:58] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:52:58] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:52:59] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:52:59] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:52:59] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:52:59] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:52:59] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:53:00] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:53:00] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 15:53:00] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 15:53:00] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.35): 7739 observaciones encontradas.
+[03/07 15:53:00] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:55:34] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:55:34] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:55:34] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:55:34] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:55:34] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:55:35] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:55:35] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:55:35] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:55:35] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.05, 0.1]: 9699 observaciones.
+[03/07 15:55:35] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0750
+[03/07 15:55:35] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.4): 8826 observaciones encontradas.
+[03/07 15:55:35] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:56:53] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:56:53] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:56:54] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:56:54] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:56:54] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:56:54] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:56:54] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:56:55] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:56:55] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 15:56:55] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 15:56:55] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.35): 2797 observaciones encontradas.
+[03/07 15:56:55] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:57:14] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:57:14] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:57:15] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:57:15] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:57:15] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:57:15] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:57:15] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:57:15] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:57:15] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 15:57:15] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 15:57:15] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.4): 4141 observaciones encontradas.
+[03/07 15:57:16] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:57:45] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:57:45] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:57:46] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:57:46] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:57:46] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:57:46] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:57:46] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:57:47] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:57:47] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.1, 0.15]: 5095 observaciones.
+[03/07 15:57:47] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.1250
+[03/07 15:57:47] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.45): 4761 observaciones encontradas.
+[03/07 15:57:47] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 15:59:35] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 15:59:35] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 15:59:36] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 15:59:36] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 15:59:36] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 15:59:36] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 15:59:36] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 15:59:37] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 15:59:37] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 30802 observaciones.
+[03/07 15:59:37] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 15:59:37] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.35): 30238 observaciones encontradas.
+[03/07 15:59:37] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 16:00:27] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 16:00:27] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 16:00:28] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 16:00:28] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 16:00:28] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 16:00:28] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 16:00:28] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 16:00:29] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 16:00:29] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.0, 0.05]: 30802 observaciones.
+[03/07 16:00:29] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.0250
+[03/07 16:00:29] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.4): 30530 observaciones encontradas.
+[03/07 16:00:29] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 16:02:13] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 16:02:13] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 16:02:13] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 16:02:13] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 16:02:14] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 16:02:14] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 16:02:14] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 16:02:14] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 16:02:14] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.15, 1.0]: 5141 observaciones.
+[03/07 16:02:14] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 16:02:14] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.4): 4926 observaciones encontradas.
+[03/07 16:02:14] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 16:06:29] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 16:06:29] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 16:06:29] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 16:06:29] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 16:06:30] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 16:06:30] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 16:06:30] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 16:06:30] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 16:06:30] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.15, 1.0]: 5141 observaciones.
+[03/07 16:06:30] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 16:06:30] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.3): 3224 observaciones encontradas.
+[03/07 16:06:30] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.
+[03/07 16:08:21] [INFO] [__main__.py:366][<module>] - === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[03/07 16:08:21] [INFO] [src.data_loader.py:40][load] - Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[03/07 16:08:21] [DEBUG] [src.data_loader.py:42][load] - Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[03/07 16:08:21] [INFO] [src.data_loader.py:54][split] - Iniciando partición estratificada (Train, Val, Tune)...
+[03/07 16:08:22] [DEBUG] [src.data_loader.py:73][split] - Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[03/07 16:08:22] [DEBUG] [src.persistence.py:45][load_model] - Modelo cargado: xgb_full_fold0.pkl
+[03/07 16:08:22] [DEBUG] [src.evaluator.py:34][__init__] - Evaluator inicializado con umbral: 0.500
+[03/07 16:08:22] [DEBUG] [src.grouper.py:13][__init__] - ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[03/07 16:08:22] [INFO] [src.grouper.py:17][get_subgroup] - Subgrupo extraído [0.15, 1.0]: 5141 observaciones.
+[03/07 16:08:22] [INFO] [src.grouper.py:27][get_anchor] - Ancla seleccionada con probabilidad real: 0.4039
+[03/07 16:08:22] [INFO] [src.grouper.py:44][get_neighborhood] - Vecindad calculada (radio <= 0.35): 4437 observaciones encontradas.
+[03/07 16:08:23] [INFO] [__main__.py:155][run_group_analysis] - Análisis de agrupamiento finalizado y exportado.

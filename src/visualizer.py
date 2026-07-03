@@ -258,3 +258,15 @@ def plot_optuna_history(csv_path: Path, model_tag: str, dataset_tag: str, metric
 
     fig.tight_layout()
     return _save_fig(fig, f"{model_tag}_optuna_history_{dataset_tag}.png")
+
+def plot_proba_histogram(probas: np.ndarray, model_tag: str, dataset_tag: str) -> Path:
+    fig, ax = plt.subplots(figsize=(8, 5))
+    
+    ax.hist(probas, bins=50, color="#0FA6E7", edgecolor="black", alpha=0.7)
+    ax.set_title(f"Distribución de Probabilidades - {model_tag.upper()} ({probas.size} muestras)")
+    ax.set_xlabel("Probabilidad Predicha")
+    ax.set_ylabel("Frecuencia")
+    ax.grid(axis="y", linestyle="--", alpha=0.6)
+    
+    filename = f"proba_hist_{model_tag}_{dataset_tag}_val.png"
+    return _save_fig(fig, filename)
