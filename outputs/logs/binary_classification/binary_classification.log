@@ -379,3 +379,137 @@
 [2026-07-05 20:37:41] [evaluator.py:34] [DEBUG] -> Evaluator inicializado con umbral: 0.500
 [2026-07-05 20:37:41] [grouper_main.py:109] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: No especificado, Radio: 0.3
 [2026-07-05 20:37:41] [grouper_main.py:123] [INFO] -> No se proporcionó --anchor-prob; se omitió la generación de vecindad basada en ancla.
+[2026-07-05 22:21:19] [xai_main.py:154] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:21:19] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:21:20] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:21:20] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:21:20] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:21:20] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:21:21] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:21:21] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:21:21] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:24:23] [xai_main.py:153] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:24:23] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:24:23] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:24:23] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:24:23] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:24:23] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:24:24] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:24:24] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:24:24] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:29:04] [xai_main.py:153] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:29:04] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:29:05] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:29:05] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:29:05] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:29:05] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:29:05] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:29:05] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:29:05] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:29:07] [xai_main.py:180] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:45:02] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_xgb_full.csv
+[2026-07-05 22:45:03] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 22:45:46] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:45:46] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:45:46] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:45:46] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:45:46] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:45:46] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:45:46] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:45:46] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:45:46] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:46:10] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:48:44] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:48:44] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:48:44] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:48:44] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:48:44] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:48:44] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:48:44] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:48:44] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:48:44] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:48:46] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:50:10] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:50:10] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:50:10] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:50:10] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:50:10] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:50:10] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:50:11] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:50:11] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:50:11] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:50:12] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:51:00] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:51:00] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:51:00] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:51:00] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:51:00] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:51:00] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:51:00] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:51:00] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:51:00] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:51:24] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:52:40] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:52:40] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:52:40] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:52:40] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:52:40] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:52:40] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:52:41] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:52:41] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:52:41] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:52:42] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:54:33] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:54:33] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:54:33] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:54:33] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:54:33] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:54:33] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:54:33] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:54:33] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:54:34] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:54:35] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:55:00] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:55:00] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:55:00] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:55:00] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:55:00] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:55:00] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:55:00] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:55:00] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:55:00] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:55:24] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:55:36] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:55:36] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:55:36] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:55:36] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:55:36] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:55:36] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:55:36] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:55:36] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:55:36] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:55:41] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:56:05] [xai_main.py:179] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-05 22:56:05] [persistence.py:45] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 22:56:05] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 22:56:05] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 22:56:05] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 22:56:05] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 22:56:06] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 22:56:06] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 22:56:06] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 22:56:08] [xai_main.py:206] [INFO] -> === Etapa XAI Completada ===
+[2026-07-05 22:56:40] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_xgb_full.csv
+[2026-07-05 22:56:41] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 22:58:31] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-05 22:58:32] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 22:58:46] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-05 22:58:46] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 22:58:58] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-05 22:58:58] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 22:59:07] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-05 22:59:08] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 23:00:02] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-05 23:00:04] [xai_main.py:173] [INFO] -> Operación finalizada.
+[2026-07-05 23:00:21] [xai_main.py:170] [INFO] -> Iniciando graficación de estabilidad para: shap_stability_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-05 23:00:21] [xai_main.py:173] [INFO] -> Operación finalizada.
