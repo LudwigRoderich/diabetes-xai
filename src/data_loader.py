@@ -26,8 +26,12 @@ class DataLoader:
         self.use_clean = use_clean
         self.df        = None
 
-        self.X_train = self.X_val = self.X_tune = None
-        self.y_train = self.y_val = self.y_tune = None
+        self.X_train: pd.DataFrame | None = None
+        self.X_val: pd.DataFrame | None = None
+        self.X_tune: pd.DataFrame | None = None
+        self.y_train: pd.Series | None = None
+        self.y_val: pd.Series | None = None
+        self.y_tune: pd.Series | None = None
 
     def load(self) -> "DataLoader":
         """Carga el dataset desde disco verificando su existencia."""
@@ -70,11 +74,11 @@ class DataLoader:
         self.X_train, self.y_train = X_main.iloc[idx_train], y_main.iloc[idx_train]
         self.X_val, self.y_val     = X_main.iloc[idx_val], y_main.iloc[idx_val]
 
-        logger.debug(
+        logger.debug( #type: ignore
             f"Partición completada | "
-            f"Train: {len(self.X_train)} ({TRAIN_SIZE*100:.0f}%), "
-            f"Val: {len(self.X_val)} ({VAL_SIZE*100:.0f}%), "
-            f"Tune: {len(self.X_tune)} ({TUNE_SIZE*100:.0f}%)"
+            f"Train: {len(self.X_train)} ({TRAIN_SIZE*100:.0f}%), " #type: ignore
+            f"Val: {len(self.X_val)} ({VAL_SIZE*100:.0f}%), " #type: ignore
+            f"Tune: {len(self.X_tune)} ({TUNE_SIZE*100:.0f}%)" #type: ignore
         )
         return self
 

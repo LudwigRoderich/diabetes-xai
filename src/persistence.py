@@ -7,7 +7,7 @@ import pandas as pd
 from pathlib import Path
 from typing import Any
 
-from src.config import MODELS_DIR, RESULTS_DIR, CLUSTERS_DIR, get_logger
+from src.config import MODELS_DIR, RESULTS_CLF_DIR, get_logger
 
 logger = get_logger(__name__)
 
@@ -48,8 +48,7 @@ class Persistence:
     @staticmethod
     def save_fold_metrics(metrics: dict, fold_id: int | str, dataset_tag: str) -> Path:
         """Guarda el diccionario de métricas de un fold como JSON."""
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        path = RESULTS_DIR / f"metrics_{dataset_tag}_fold{fold_id}.json"
+        path = RESULTS_CLF_DIR / f"metrics_{dataset_tag}_fold{fold_id}.json"
 
         payload = {
             "fold_id": fold_id,
@@ -69,7 +68,7 @@ class Persistence:
     @staticmethod
     def load_fold_metrics(fold_id: int | str, dataset_tag: str) -> dict:
         """Recupera las métricas de un fold desde su archivo JSON."""
-        path = RESULTS_DIR / f"metrics_{dataset_tag}_fold{fold_id}.json"
+        path = RESULTS_CLF_DIR / f"metrics_{dataset_tag}_fold{fold_id}.json"
         
         if not path.exists():
             logger.error(f"No se encontraron métricas de fold en: {path}")
@@ -84,8 +83,8 @@ class Persistence:
     @staticmethod
     def save_cv_summary(summary: pd.DataFrame, dataset_tag: str) -> Path:
         """Guarda el DataFrame resumen del CV completo como CSV."""
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        path = RESULTS_DIR / f"cv_summary_{dataset_tag}.csv"
+        RESULTS_CLF_DIR.mkdir(parents=True, exist_ok=True)
+        path = RESULTS_CLF_DIR / f"cv_summary_{dataset_tag}.csv"
         
         try:
             summary.to_csv(path, index=False)
@@ -98,7 +97,7 @@ class Persistence:
     @staticmethod
     def load_cv_summary(dataset_tag: str) -> pd.DataFrame:
         """Recupera el DataFrame resumen del CV desde su CSV."""
-        path = RESULTS_DIR / f"cv_summary_{dataset_tag}.csv"
+        path = RESULTS_CLF_DIR / f"cv_summary_{dataset_tag}.csv"
         
         if not path.exists():
             logger.error(f"No se encontró el resumen CV: {path}")
@@ -111,8 +110,8 @@ class Persistence:
     @staticmethod
     def save_final_results(results: dict, dataset_tag: str) -> Path:
         """Guarda los resultados del modelo final entrenado sobre X_train completo."""
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        path = RESULTS_DIR / f"final_results_{dataset_tag}.json"
+        RESULTS_CLF_DIR.mkdir(parents=True, exist_ok=True)
+        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}.json"
         
         try:
             with open(path, "w", encoding="utf-8") as f:
@@ -126,7 +125,7 @@ class Persistence:
     @staticmethod
     def load_final_results(dataset_tag: str) -> dict:
         """Recupera los resultados finales desde su archivo JSON."""
-        path = RESULTS_DIR / f"final_results_{dataset_tag}.json"
+        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}.json"
         
         if not path.exists():
             logger.error(f"No se encontraron los resultados finales: {path}")
@@ -152,29 +151,15 @@ class Persistence:
 
     @staticmethod
     def list_saved_results(dataset_tag: str | None = None) -> list:
-        """Lista los archivos de resultados disponibles en RESULTS_DIR."""
-        if not RESULTS_DIR.exists():
-            logger.warning(f"El directorio de resultados no existe: {RESULTS_DIR}")
+        """Lista los archivos de resultados disponibles en RESULTS_CLF_DIR."""
+        if not RESULTS_CLF_DIR.exists():
+            logger.warning(f"El directorio de resultados no existe: {RESULTS_CLF_DIR}")
             return []
             
         pattern = f"*{dataset_tag}*" if dataset_tag else "*"
         results_found = sorted(
-            p for p in RESULTS_DIR.glob(pattern)
+            p for p in RESULTS_CLF_DIR.glob(pattern)
             if p.suffix in {".json", ".csv"}
         )
         logger.debug(f"Se encontraron {len(results_found)} archivos de resultados.")
         return results_found
-    
-    @staticmethod
-    def save_cluster_model(model: any, algorithm: str, k: int, dataset_tag: str, seed: int):
-        filename = f"cluster_model_{algorithm}_k{k}_seed{seed}_{dataset_tag}.pkl"
-        path = CLUSTERS_DIR / filename
-        joblib.dump(model, path)
-        logger.debug(f"Modelo de clustering guardado en: {path}")
-
-    @staticmethod
-    def save_cluster_assignments(df_assignments: pd.DataFrame, algorithm: str, k: int, dataset_tag: str, seed: int):
-        filename = f"cluster_assignments_{algorithm}_k{k}_seed{seed}_{dataset_tag}.csv"
-        path = CLUSTERS_DIR / filename
-        df_assignments.to_csv(path, index=False)
-        logger.debug(f"Asignaciones de clúster guardadas en: {path}")

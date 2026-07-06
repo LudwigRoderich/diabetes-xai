@@ -14,7 +14,7 @@ import numpy as np
 from typing import Callable, Any, Optional
 
 from src.evaluator import Evaluator
-from src.config import RESULTS_DIR, LOGS_DIR, get_logger
+from src.config import get_logger, RESULTS_CLF_DIR, LOGS_CLF_DIR
 
 logger = get_logger(__name__)
 
@@ -84,7 +84,7 @@ class HyperparameterOptimizer:
         
         optuna_logger.handlers.clear()
         
-        log_path = LOGS_DIR / f"optuna_{self.study_name}_{self.dataset_tag}.log"
+        log_path = LOGS_CLF_DIR / f"optuna_{self.study_name}_{self.dataset_tag}.log"
         file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
         
         formatter = logging.Formatter(
@@ -170,10 +170,8 @@ class HyperparameterOptimizer:
     def _save_results(self, best_params: dict, best_score: float, metric: str) -> None:
         """
         Guarda los mejores parámetros (JSON) y el historial completo (CSV).
-        """
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        
-        best_file = RESULTS_DIR / f"{self.study_name}_best_params_{self.dataset_tag}.json"
+        """        
+        best_file = RESULTS_CLF_DIR / f"{self.study_name}_best_params_{self.dataset_tag}.json"
         payload = {
             "metric_optimized": metric,
             "best_score": best_score,
@@ -190,7 +188,7 @@ class HyperparameterOptimizer:
             
         try:
             trials_df = self.study.trials_dataframe()
-            trials_file = RESULTS_DIR / f"{self.study_name}_trials_history_{self.dataset_tag}.csv"
+            trials_file = RESULTS_CLF_DIR / f"{self.study_name}_trials_history_{self.dataset_tag}.csv"
             trials_df.to_csv(trials_file, index=False)
             logger.info(f"Historial tabular de ensayos guardado en: {trials_file.name}")
         except Exception as e:

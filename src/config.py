@@ -3,8 +3,8 @@ Configuración central del proyecto: semillas, rutas, parámetros base y sistema
 Todos los módulos deben importar desde aquí para evitar valores hardcodeados.
 """
 
+from datetime import datetime
 import logging
-import os
 import sys
 from pathlib import Path
 
@@ -20,53 +20,70 @@ RESULTS_DIR = OUTPUT_DIR / "results"
 FIGURES_DIR = OUTPUT_DIR / "figures"
 LOGS_DIR    = OUTPUT_DIR / "logs"
 XAI_DIR     = OUTPUT_DIR / "xai"
-LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+RESULTS_CLF_DIR   = RESULTS_DIR / "binary_classification"
+RESULTS_XAI_DIR   = RESULTS_DIR / "xai"
+RESULTS_GROUP_DIR = RESULTS_DIR / "grouping"
+
+FIGURES_CLF_DIR   = FIGURES_DIR / "binary_classification"
+FIGURES_XAI_DIR   = FIGURES_DIR / "xai"
+FIGURES_GROUP_DIR = FIGURES_DIR / "grouping"
+
+LOGS_CLF_DIR      = LOGS_DIR / "binary_classification"
+LOGS_XAI_DIR      = LOGS_DIR / "xai"
+LOGS_GROUP_DIR    = LOGS_DIR / "grouping"
+
+for d in [
+    MODELS_DIR, SCALERS_DIR,
+    RESULTS_CLF_DIR, RESULTS_XAI_DIR, RESULTS_GROUP_DIR,
+    FIGURES_CLF_DIR, FIGURES_XAI_DIR, FIGURES_GROUP_DIR,
+    LOGS_CLF_DIR, LOGS_XAI_DIR, LOGS_GROUP_DIR
+]:
+    d.mkdir(parents=True, exist_ok=True)
 
 RAW_DATA_PATH   = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015.csv"
 CLEAN_DATA_PATH = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv"
 
-CLUSTERS_DIR = RESULTS_DIR / "clusters"
-CLUSTERS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 
 # 2. Configuración del Logger
-
+RUN_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 def get_logger(name: str) -> logging.Logger:
     """
-    Instancia y configura un logger formal para el módulo que lo solicite.
-    
-    El formato incluye:
-    - Fecha y hora exacta.
-    - Nivel de severidad (INFO, WARNING, ERROR, etc.).
-    - Origen: Archivo, Función y Línea exacta de código.
-    - Mensaje.
+    Instancia y configura un logger formal. Redirige dinámicamente el log a 
+    la subcarpeta correspondiente según el nombre del módulo o flujo.
     """
     logger = logging.getLogger(name)
-    
-    if not logger.hasHandlers():
-        logger.setLevel(logging.DEBUG)
-        
-        # Ejemplo: [2026-06-14 10:15:30] [INFO] [trainer.run_cv:145] - Entrenando fold 1...
-        formatter = logging.Formatter(
-            fmt="[%(asctime)s] [%(levelname)s] [%(name)s.py:%(lineno)d][%(funcName)s] - %(message)s",
-            datefmt="%d/%m %H:%M:%S"
-        )
-        
-        console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.INFO)
-        console_handler.setFormatter(formatter)
-        
-        file_handler = logging.FileHandler(LOGS_DIR / "pipeline_execution.log", encoding="utf-8")
-        file_handler.setLevel(logging.DEBUG)
-        file_handler.setFormatter(formatter)
-        
-        logger.addHandler(console_handler)
-        logger.addHandler(file_handler)
-        
-        logger.propagate = False
+    if logger.hasHandlers():
+        return logger
 
+    logger.setLevel(logging.DEBUG)
+
+    if "xai" in name.lower():
+        log_file = LOGS_XAI_DIR / "xai_pipeline.log"
+    elif "group" in name.lower():
+        log_file = LOGS_GROUP_DIR / "grouping_pipeline.log"
+    else:
+        log_file = LOGS_CLF_DIR / "binary_classification.log"
+
+    c_handler = logging.StreamHandler(sys.stdout)
+    f_handler = logging.FileHandler(log_file, encoding="utf-8")
+
+    c_handler.setLevel(logging.INFO)
+    f_handler.setLevel(logging.DEBUG)
+
+    formatter = logging.Formatter(
+        "[%(asctime)s] [%(filename)s:%(lineno)d] [%(levelname)s] -> %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+    c_handler.setFormatter(formatter)
+    f_handler.setFormatter(formatter)
+
+    logger.addHandler(c_handler)
+    logger.addHandler(f_handler)
     return logger
+
 
 # 3. Semillas
 
@@ -157,19 +174,9 @@ def xgb_param_space(trial) -> dict:
         "random_state": XGBOOST_SEED,
     }
 
-# 9. Configuración de Clustering
-CLUSTER_TOLERANCE = float(1e-4)
-DEFAULT_K_CLUSTERS = 5
-CLUSTER_SEED = 1860
-MAX_CLUSTER_SAMPLE_SIZE = 3000
-
-CLARA_SAMPLE_FRAC = 0.2
-CLARA_MAX_SAMPLE = 3000
-CLARA_N_SAMPLES = 5
-
 # 10. Configuración XAI
 
-# Permutation Feature Importance (PFI)
+# 10.1 Permutation Feature Importance (PFI)
 PFI_NJOBS     = -1
 PFI_N_REPEATS = 50
 PFI_SCORING    = "average_precision" 

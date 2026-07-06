@@ -1,2 +1,5 @@
 *.pyc
 *_old.py
+.vscode/
+*/cluster/
+**/Clara/*

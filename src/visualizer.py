@@ -5,13 +5,12 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-from src.config import FIGURES_DIR, get_logger
+from src.config import FIGURES_CLF_DIR, get_logger
 
 logger = get_logger(__name__)
 
 def _save_fig(fig: Figure, filename: str) -> Path:
-    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
-    path = FIGURES_DIR / filename
+    path = FIGURES_CLF_DIR / filename
     
     try:
         fig.savefig(path, dpi=150, bbox_inches="tight")

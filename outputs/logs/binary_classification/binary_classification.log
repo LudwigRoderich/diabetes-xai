@@ -1,0 +1,381 @@
+[2026-07-05 18:17:00] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: all) ===
+[2026-07-05 18:17:00] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:17:00] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:17:00] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:17:00] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:17:01] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:17:01] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:17:01] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:17:01] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:17:01] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:17:02] [__main__] [INFO] -> Histograma de probabilidades guardado en: proba_hist_xgb_full_all.png
+[2026-07-05 18:17:27] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: tune) ===
+[2026-07-05 18:17:27] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:17:27] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:17:27] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:17:27] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:17:28] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:17:28] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:17:28] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:17:28] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:17:28] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:17:28] [__main__] [INFO] -> Histograma de probabilidades guardado en: proba_hist_xgb_full_tune.png
+[2026-07-05 18:17:55] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:17:55] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:17:56] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:17:56] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:17:56] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:17:56] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:17:56] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:17:56] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:17:56] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:17:56] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:17:56] [__main__] [INFO] -> Histograma de probabilidades guardado en: proba_hist_xgb_full_val.png
+[2026-07-05 18:19:04] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:19:04] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:19:04] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:19:04] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:19:04] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:19:04] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:19:04] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:19:04] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:19:04] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:19:04] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:19:04] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 0.25], Ancla: 0.125, Radio: 0.3
+[2026-07-05 18:19:04] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.125.csv
+[2026-07-05 18:21:29] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:21:29] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:21:29] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:21:29] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:21:29] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:21:29] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:21:29] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:21:29] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:21:29] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:21:29] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:21:29] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.25, 0.25], Ancla: 0.125, Radio: 0.3
+[2026-07-05 18:22:32] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:22:32] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:22:32] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:22:32] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:22:32] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:22:32] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:22:32] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:22:32] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:22:32] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:22:32] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:22:33] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.25, 0.25], Ancla: 0.25, Radio: 0.3
+[2026-07-05 18:23:35] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: DT | Partición: val) ===
+[2026-07-05 18:23:35] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:23:35] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:23:35] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:23:35] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:23:36] [src.persistence] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 18:23:36] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:23:36] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:23:36] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:23:36] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:23:36] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.25, 0.25], Ancla: 0.25, Radio: 0.3
+[2026-07-05 18:24:12] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: DT | Partición: val) ===
+[2026-07-05 18:24:12] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:24:12] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:24:12] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:24:12] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:24:12] [src.persistence] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 18:24:12] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:24:12] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:24:12] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:24:12] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:24:12] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 1.0], Ancla: 0.0125, Radio: 0.3
+[2026-07-05 18:24:13] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_dt_full_val_anchor0.0125.csv
+[2026-07-05 18:25:04] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: DT | Partición: val) ===
+[2026-07-05 18:25:04] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:25:04] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:25:04] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:25:04] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:25:04] [src.persistence] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 18:25:04] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:25:04] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:25:04] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:25:04] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:25:04] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.3, 0.35], Ancla: 0.325, Radio: 0.3
+[2026-07-05 18:25:04] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_dt_full_val_anchor0.325.csv
+[2026-07-05 18:29:37] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: DT | Partición: all) ===
+[2026-07-05 18:29:37] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:29:38] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:29:38] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:29:38] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:29:38] [src.persistence] [DEBUG] -> Modelo cargado: dt_full_fold0.pkl
+[2026-07-05 18:29:38] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:29:38] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:29:38] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:29:38] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:29:38] [__main__] [INFO] -> Histograma de probabilidades guardado en: proba_hist_dt_full_all.png
+[2026-07-05 18:36:01] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:36:01] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:36:01] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:36:01] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:36:02] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:36:02] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:36:02] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:36:02] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:36:02] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:36:02] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:36:02] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 0.05], Ancla: 0.025, Radio: 0.3
+[2026-07-05 18:36:02] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.025.csv
+[2026-07-05 18:39:53] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:39:53] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:39:53] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:39:53] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:39:53] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:39:53] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:39:53] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:39:53] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:39:53] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:39:53] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:39:53] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 1.0], Ancla: 0.5, Radio: 1.0
+[2026-07-05 18:39:54] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.5.csv
+[2026-07-05 18:40:38] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:40:38] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:40:39] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:40:39] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:40:39] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:40:39] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:40:39] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:40:39] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:40:39] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:40:39] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:40:39] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 0.05], Ancla: 0.025, Radio: 0.3
+[2026-07-05 18:40:39] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.025.csv
+[2026-07-05 18:53:17] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:53:17] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:53:17] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:53:17] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:53:18] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:53:18] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:53:18] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:53:18] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:53:18] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:53:18] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:53:18] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: 0.075, Radio: 0.3
+[2026-07-05 18:53:18] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.075.csv
+[2026-07-05 18:53:51] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:53:51] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:53:51] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:53:51] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:53:52] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:53:52] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:53:52] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:53:52] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:53:52] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:53:52] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:53:52] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.1, 0.15], Ancla: 0.125, Radio: 0.3
+[2026-07-05 18:53:52] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.125.csv
+[2026-07-05 18:55:15] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 18:55:15] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 18:55:15] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 18:55:15] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 18:55:16] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 18:55:16] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 18:55:16] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 18:55:16] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 18:55:16] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 18:55:16] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 18:55:16] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.15, 1.0], Ancla: 0.5, Radio: 0.3
+[2026-07-05 18:55:16] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.5.csv
+[2026-07-05 19:16:02] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:16:02] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:16:02] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:16:02] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:16:03] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:16:03] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:16:03] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:16:03] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:16:03] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:16:03] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:16:03] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 0.05], Ancla: 0.025, Radio: 0.3
+[2026-07-05 19:16:03] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.025_radius_0.3.csv
+[2026-07-05 19:18:24] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:18:24] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:18:24] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:18:24] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:18:25] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:18:25] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:18:25] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:18:25] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:18:25] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:18:25] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:18:25] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: 0.075, Radio: 0.3
+[2026-07-05 19:18:25] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.075_radius_0.3.csv
+[2026-07-05 19:18:34] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:18:34] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:18:34] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:18:34] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:18:34] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:18:34] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:18:34] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:18:34] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:18:34] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:18:34] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:18:34] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.1, 0.15], Ancla: 0.125, Radio: 0.3
+[2026-07-05 19:18:34] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.125_radius_0.3.csv
+[2026-07-05 19:18:48] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:18:48] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:18:49] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:18:49] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:18:49] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:18:49] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:18:49] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:18:49] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:18:49] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:18:49] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:18:49] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.15, 1.0], Ancla: 0.5, Radio: 0.3
+[2026-07-05 19:18:49] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.5_radius_0.3.csv
+[2026-07-05 19:32:12] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:32:12] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:32:12] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:32:12] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:32:12] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:32:12] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:32:12] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:32:12] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:32:12] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:32:12] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:32:12] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.15, 1.0], Ancla: 0.2, Radio: 0.3
+[2026-07-05 19:32:12] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.2_radius_0.3.csv
+[2026-07-05 19:32:49] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:32:49] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:32:49] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:32:49] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:32:49] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:32:49] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:32:49] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:32:49] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:32:49] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:32:49] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:32:49] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.15, 1.0], Ancla: 0.17, Radio: 0.3
+[2026-07-05 19:32:49] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.17_radius_0.3.csv
+[2026-07-05 19:36:28] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:36:28] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:36:28] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:36:28] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:36:29] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:36:29] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:36:29] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:36:29] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:36:29] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:36:29] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:36:29] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.0, 0.05], Ancla: 0.025, Radio: 0.35
+[2026-07-05 19:36:29] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-05 19:40:37] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:40:37] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:40:37] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:40:37] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:40:37] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:40:37] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:40:37] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:40:37] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:40:37] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:40:37] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:40:37] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: 0.075, Radio: 0.35
+[2026-07-05 19:40:38] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-05 19:42:30] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:42:30] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:42:31] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:42:31] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:42:31] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:42:31] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:42:31] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:42:31] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:42:31] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:42:31] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:42:31] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.1, 0.15], Ancla: 0.125, Radio: 0.35
+[2026-07-05 19:42:31] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-05 19:45:36] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 19:45:36] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 19:45:36] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 19:45:36] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 19:45:36] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 19:45:36] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 19:45:36] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 19:45:36] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 19:45:36] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 19:45:36] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 19:45:36] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.15, 1.0], Ancla: 0.17, Radio: 0.35
+[2026-07-05 19:45:36] [__main__] [INFO] -> Análisis de agrupamiento finalizado. Guardado en: neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-05 19:57:42] [__main__] [INFO] -> === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[2026-07-05 19:57:42] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'full'
+[2026-07-05 19:57:42] [src.visualizer] [WARNING] -> Historial no encontrado: dt_optimization_trials_history_full.csv
+[2026-07-05 19:57:42] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'clean'
+[2026-07-05 19:57:42] [src.visualizer] [WARNING] -> Historial no encontrado: dt_optimization_trials_history_clean.csv
+[2026-07-05 19:57:42] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'full'
+[2026-07-05 19:57:42] [src.visualizer] [WARNING] -> Historial no encontrado: xgb_optimization_trials_history_full.csv
+[2026-07-05 19:57:42] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'clean'
+[2026-07-05 19:57:42] [src.visualizer] [WARNING] -> Historial no encontrado: xgb_optimization_trials_history_clean.csv
+[2026-07-05 19:57:42] [__main__] [INFO] -> Operación completada: Gráficas de historial generadas.
+[2026-07-05 20:00:21] [__main__] [INFO] -> === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[2026-07-05 20:00:21] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'full'
+[2026-07-05 20:00:21] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: dt_optuna_history_full.png
+[2026-07-05 20:00:21] [__main__] [INFO] -> Gráfica de Optuna guardada en: dt_optuna_history_full.png
+[2026-07-05 20:00:21] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'clean'
+[2026-07-05 20:00:22] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: dt_optuna_history_clean.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Gráfica de Optuna guardada en: dt_optuna_history_clean.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'full'
+[2026-07-05 20:00:22] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: xgb_optuna_history_full.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Gráfica de Optuna guardada en: xgb_optuna_history_full.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'clean'
+[2026-07-05 20:00:22] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: xgb_optuna_history_clean.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Gráfica de Optuna guardada en: xgb_optuna_history_clean.png
+[2026-07-05 20:00:22] [__main__] [INFO] -> Operación completada: Gráficas de historial generadas.
+[2026-07-05 20:02:20] [__main__] [INFO] -> === Ejecución Iniciada: Diabetes XAI Pipeline ===
+[2026-07-05 20:02:20] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'full'
+[2026-07-05 20:02:21] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: dt_optuna_history_full.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Gráfica de Optuna guardada en: dt_optuna_history_full.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Generando historial gráfico: DT — Dataset: 'clean'
+[2026-07-05 20:02:21] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: dt_optuna_history_clean.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Gráfica de Optuna guardada en: dt_optuna_history_clean.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'full'
+[2026-07-05 20:02:21] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: xgb_optuna_history_full.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Gráfica de Optuna guardada en: xgb_optuna_history_full.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Generando historial gráfico: XGB — Dataset: 'clean'
+[2026-07-05 20:02:21] [src.visualizer] [DEBUG] -> Figura guardada exitosamente: xgb_optuna_history_clean.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Gráfica de Optuna guardada en: xgb_optuna_history_clean.png
+[2026-07-05 20:02:21] [__main__] [INFO] -> Operación completada: Gráficas de historial generadas.
+[2026-07-05 20:27:18] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 20:27:18] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 20:27:18] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 20:27:18] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 20:28:45] [__main__] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 20:28:45] [src.data_loader] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 20:28:46] [src.data_loader] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 20:28:46] [src.data_loader] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 20:28:46] [src.data_loader] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 20:28:46] [src.persistence] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 20:28:46] [src.preprocessor] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 20:28:46] [src.preprocessor] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 20:28:46] [__main__] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 20:28:46] [src.evaluator] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 20:28:46] [__main__] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: 0.125, Radio: 0.3
+[2026-07-05 20:30:44] [grouper_main.py:81] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 20:30:44] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 20:30:44] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 20:30:44] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 20:30:44] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 20:30:44] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 20:30:44] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 20:30:44] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 20:30:44] [grouper_main.py:96] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 20:30:44] [evaluator.py:34] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 20:30:44] [grouper_main.py:109] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: 0.125, Radio: 0.3
+[2026-07-05 20:37:41] [grouper_main.py:81] [INFO] -> === Iniciando Módulo de Agrupación (Modelo: XGB | Partición: val) ===
+[2026-07-05 20:37:41] [data_loader.py:44] [INFO] -> Cargando dataset completo: diabetes_binary_health_indicators_BRFSS2015.csv
+[2026-07-05 20:37:41] [data_loader.py:46] [DEBUG] -> Dataset cargado exitosamente. Dimensiones: (253680, 22)
+[2026-07-05 20:37:41] [data_loader.py:58] [INFO] -> Iniciando partición estratificada (Train, Val, Tune)...
+[2026-07-05 20:37:41] [data_loader.py:77] [DEBUG] -> Partición completada | Train: 177575 (70%), Val: 50737 (20%), Tune: 25368 (10%)
+[2026-07-05 20:37:41] [persistence.py:45] [DEBUG] -> Modelo cargado: xgb_full_fold0.pkl
+[2026-07-05 20:37:41] [preprocessor.py:27] [DEBUG] -> Preprocessor inicializado -> fold: 0 | dataset: full
+[2026-07-05 20:37:41] [preprocessor.py:102] [INFO] -> Preprocessor cargado desde disco: scaler_full_fold0.pkl
+[2026-07-05 20:37:41] [grouper_main.py:96] [DEBUG] -> Datos escalados utilizando el preprocesador pre-entrenado.
+[2026-07-05 20:37:41] [evaluator.py:34] [DEBUG] -> Evaluator inicializado con umbral: 0.500
+[2026-07-05 20:37:41] [grouper_main.py:109] [INFO] -> Iniciando segmentación: Intervalo [0.05, 0.1], Ancla: No especificado, Radio: 0.3
+[2026-07-05 20:37:41] [grouper_main.py:123] [INFO] -> No se proporcionó --anchor-prob; se omitió la generación de vecindad basada en ancla.

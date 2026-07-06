@@ -17,7 +17,12 @@ class ProbabilityGrouper:
         logger.info(f"Subgrupo extraído [{min_prob}, {max_prob}]: {len(subgroup)} observaciones.")
         return subgroup
 
-    def get_anchor(self, subgroup: pd.DataFrame, target_prob: float) -> pd.DataFrame:
+    def get_anchor(self, subgroup: pd.DataFrame, target_prob: float, min_prob: float, max_prob: float) -> pd.DataFrame:
+        """Extrae la observación más cercana a la probabilidad objetivo, validando que pertenezca al intervalo."""
+        if target_prob < min_prob or target_prob > max_prob:
+            logger.error(f"Probabilidad objetivo ({target_prob}) fuera del intervalo permitido [{min_prob}, {max_prob}].")
+            raise ValueError(f"El ancla debe pertenecer al intervalo definido.")
+            
         if subgroup.empty:
             logger.error("Intento de extraer ancla de un subgrupo vacío.")
             raise ValueError("El subgrupo proporcionado está vacío.")

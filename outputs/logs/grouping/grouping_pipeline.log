@@ -1,0 +1,93 @@
+[2026-07-05 18:19:04] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:19:04] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 0.25]: 50448 observaciones.
+[2026-07-05 18:19:04] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1250
+[2026-07-05 18:19:04] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 24826 observaciones encontradas.
+[2026-07-05 18:21:29] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:21:29] [src.grouper] [INFO] -> Subgrupo extraído [0.25, 0.25]: 0 observaciones.
+[2026-07-05 18:21:29] [src.grouper] [ERROR] -> Probabilidad objetivo (0.125) fuera del intervalo permitido [0.25, 0.25].
+[2026-07-05 18:22:33] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:22:33] [src.grouper] [INFO] -> Subgrupo extraído [0.25, 0.25]: 0 observaciones.
+[2026-07-05 18:22:33] [src.grouper] [ERROR] -> Intento de extraer ancla de un subgrupo vacío.
+[2026-07-05 18:23:36] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:23:36] [src.grouper] [INFO] -> Subgrupo extraído [0.25, 0.25]: 0 observaciones.
+[2026-07-05 18:23:36] [src.grouper] [ERROR] -> Intento de extraer ancla de un subgrupo vacío.
+[2026-07-05 18:24:12] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:24:12] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 1.0]: 50737 observaciones.
+[2026-07-05 18:24:12] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0105
+[2026-07-05 18:24:12] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 38758 observaciones encontradas.
+[2026-07-05 18:25:04] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:25:04] [src.grouper] [INFO] -> Subgrupo extraído [0.3, 0.35]: 2052 observaciones.
+[2026-07-05 18:25:04] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.3236
+[2026-07-05 18:25:04] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 1782 observaciones encontradas.
+[2026-07-05 18:36:02] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:36:02] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 0.05]: 40307 observaciones.
+[2026-07-05 18:36:02] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0250
+[2026-07-05 18:36:02] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 35341 observaciones encontradas.
+[2026-07-05 18:39:53] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:39:53] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 1.0]: 50737 observaciones.
+[2026-07-05 18:39:53] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.3787
+[2026-07-05 18:39:53] [src.grouper] [INFO] -> Vecindad calculada (radio <= 1.0): 50737 observaciones encontradas.
+[2026-07-05 18:40:39] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:40:39] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 0.05]: 40307 observaciones.
+[2026-07-05 18:40:39] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0250
+[2026-07-05 18:40:39] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 35341 observaciones encontradas.
+[2026-07-05 18:53:18] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:53:18] [src.grouper] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-05 18:53:18] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0750
+[2026-07-05 18:53:18] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 5527 observaciones encontradas.
+[2026-07-05 18:53:52] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:53:52] [src.grouper] [INFO] -> Subgrupo extraído [0.1, 0.15]: 2510 observaciones.
+[2026-07-05 18:53:52] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1250
+[2026-07-05 18:53:52] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 1488 observaciones encontradas.
+[2026-07-05 18:55:16] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 18:55:16] [src.grouper] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1679 observaciones.
+[2026-07-05 18:55:16] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.3787
+[2026-07-05 18:55:16] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 757 observaciones encontradas.
+[2026-07-05 19:16:03] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:16:03] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 0.05]: 40307 observaciones.
+[2026-07-05 19:16:03] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0250
+[2026-07-05 19:16:03] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 35341 observaciones encontradas.
+[2026-07-05 19:18:25] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:18:25] [src.grouper] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-05 19:18:25] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0750
+[2026-07-05 19:18:25] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 5527 observaciones encontradas.
+[2026-07-05 19:18:34] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:18:34] [src.grouper] [INFO] -> Subgrupo extraído [0.1, 0.15]: 2510 observaciones.
+[2026-07-05 19:18:34] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1250
+[2026-07-05 19:18:34] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 1488 observaciones encontradas.
+[2026-07-05 19:18:49] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:18:49] [src.grouper] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1679 observaciones.
+[2026-07-05 19:18:49] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.3787
+[2026-07-05 19:18:49] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 757 observaciones encontradas.
+[2026-07-05 19:32:12] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:32:12] [src.grouper] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1679 observaciones.
+[2026-07-05 19:32:12] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1999
+[2026-07-05 19:32:12] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 734 observaciones encontradas.
+[2026-07-05 19:32:49] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:32:49] [src.grouper] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1679 observaciones.
+[2026-07-05 19:32:49] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1700
+[2026-07-05 19:32:49] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.3): 973 observaciones encontradas.
+[2026-07-05 19:36:29] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:36:29] [src.grouper] [INFO] -> Subgrupo extraído [0.0, 0.05]: 40307 observaciones.
+[2026-07-05 19:36:29] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0250
+[2026-07-05 19:36:29] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.35): 37197 observaciones encontradas.
+[2026-07-05 19:40:37] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:40:37] [src.grouper] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-05 19:40:37] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.0750
+[2026-07-05 19:40:37] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.35): 5867 observaciones encontradas.
+[2026-07-05 19:42:31] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:42:31] [src.grouper] [INFO] -> Subgrupo extraído [0.1, 0.15]: 2510 observaciones.
+[2026-07-05 19:42:31] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1250
+[2026-07-05 19:42:31] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.35): 1978 observaciones encontradas.
+[2026-07-05 19:45:36] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 19:45:36] [src.grouper] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1679 observaciones.
+[2026-07-05 19:45:36] [src.grouper] [INFO] -> Ancla seleccionada con probabilidad real: 0.1700
+[2026-07-05 19:45:36] [src.grouper] [INFO] -> Vecindad calculada (radio <= 0.35): 1410 observaciones encontradas.
+[2026-07-05 20:28:46] [src.grouper] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 20:28:46] [src.grouper] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-05 20:28:46] [src.grouper] [ERROR] -> Probabilidad objetivo (0.125) fuera del intervalo permitido [0.05, 0.1].
+[2026-07-05 20:30:44] [grouper.py:13] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 20:30:44] [grouper.py:17] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-05 20:30:44] [grouper.py:23] [ERROR] -> Probabilidad objetivo (0.125) fuera del intervalo permitido [0.05, 0.1].
+[2026-07-05 20:37:41] [grouper.py:13] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-05 20:37:41] [grouper.py:17] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
