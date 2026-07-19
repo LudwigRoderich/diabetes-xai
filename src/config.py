@@ -8,6 +8,9 @@ import logging
 import sys
 from pathlib import Path
 
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
+
 # 1. Rutas base
 
 ROOT_DIR   = Path(__file__).resolve().parents[1]
@@ -132,12 +135,24 @@ DEFAULT_THRESHOLD    = 0.5
 THRESHOLD_SEARCH_MIN = 0.01
 THRESHOLD_SEARCH_MAX = 0.99
 THRESHOLD_STEPS      = 120
+THRESH_METRIC_CHOICES = (
+    "balanced_accuracy", 
+    "f0.5", 
+    "f1", 
+    "f2", 
+    "gmean", 
+    "mcc", 
+    "precision", 
+    "recall", 
+    "youden_j"
+)
 
 # 8. Espacios de búsqueda para Optimización Bayesiana (Optuna)
 
 OPTUNA_TRIALS    = 1500
 OPTUNA_PATIENCE  = 100
 OPTUNA_TOLERANCE = 0.001
+OPTIMIZATION_METRIC_CHOICES = ("prauc", "precision", "recall", "f1", "f2", "mcc")
 
 def dt_param_space(trial) -> dict:
     """Espacio de búsqueda hiperparamétrica estructurado para Decision Tree."""
@@ -174,10 +189,43 @@ def xgb_param_space(trial) -> dict:
         "random_state": XGBOOST_SEED,
     }
 
+# 9. Registro central de modelos.
+MODEL_CONFIGS = {
+    "dt": {
+        "display_name": "Decision Tree",
+        "estimator_class": DecisionTreeClassifier,
+        "base_params": DT_BASE_PARAMS,
+        "fixed_params": {},
+        "param_space": dt_param_space,
+        "color": "#4C72B0",
+        "uses_sample_weight": True,
+        "uses_scale_pos_weight": False,
+    },
+    "xgb": {
+        "display_name": "XGBoost",
+        "estimator_class": XGBClassifier,
+        "base_params": XGBOOST_BASE_PARAMS,
+        "fixed_params": {
+            "tree_method": "hist",
+            "device": "cuda",
+            "objective": "binary:logistic",
+            "eval_metric": "aucpr",
+        },
+        "param_space": xgb_param_space,
+        "color": "#DD8452",
+        "uses_sample_weight": False,
+        "uses_scale_pos_weight": True,
+    },
+}
+
+MODEL_TAGS = tuple(MODEL_CONFIGS.keys())
+DATASET_TAGS = ("full", "clean")
+PARTITION_TAGS = ("train", "val", "tune")
+
 # 10. Configuración XAI
 
 # 10.1 Permutation Feature Importance (PFI)
 PFI_NJOBS     = -1
 PFI_N_REPEATS = 50
 PFI_SCORING    = "average_precision" 
-PFI_MAX_SAMPLES = 1.0 
+PFI_MAX_SAMPLES = 1.0

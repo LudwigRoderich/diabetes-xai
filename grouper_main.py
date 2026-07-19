@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from src.config import get_logger, CONTINUOUS_COLS, ORDINAL_COLS, RESULTS_GROUP_DIR, FIGURES_GROUP_DIR
-from src.data_loader import DataLoader
-from src.evaluator import Evaluator
-from src.persistence import Persistence
-from src.preprocessor import Preprocessor
-from src.grouper import ProbabilityGrouper
+from src.binary_clasification.data_loader import DataLoader
+from src.binary_clasification.evaluator import Evaluator
+from src.binary_clasification.persistence import Persistence
+from src.binary_clasification.preprocessor import Preprocessor
+from src.grouper.probability_grouper import ProbabilityGrouper
 
 logger = get_logger(__name__)
 

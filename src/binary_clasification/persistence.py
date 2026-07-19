@@ -108,10 +108,17 @@ class Persistence:
         return df
 
     @staticmethod
-    def save_final_results(results: dict, dataset_tag: str) -> Path:
-        """Guarda los resultados del modelo final entrenado sobre X_train completo."""
+    def save_final_results(results: dict, dataset_tag: str, thresh_metric: str) -> Path:
+        """
+        Guarda los resultados del modelo final entrenado sobre X_train completo.
+
+        El nombre incluye `thresh_metric` porque `optimal_thresholds` y
+        `val_metrics_opt`/`tune_metrics` dependen directamente de la estrategia
+        de umbral usada; sin esto, dos ejecuciones con distinta estrategia
+        (ej. 'f1' vs 'f2') sobre el mismo dataset se pisarían entre sí.
+        """
         RESULTS_CLF_DIR.mkdir(parents=True, exist_ok=True)
-        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}.json"
+        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}_{thresh_metric}.json"
         
         try:
             with open(path, "w", encoding="utf-8") as f:
@@ -123,9 +130,9 @@ class Persistence:
             raise
 
     @staticmethod
-    def load_final_results(dataset_tag: str) -> dict:
-        """Recupera los resultados finales desde su archivo JSON."""
-        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}.json"
+    def load_final_results(dataset_tag: str, thresh_metric: str) -> dict:
+        """Recupera los resultados finales de un experimento (dataset + estrategia de umbral) específico."""
+        path = RESULTS_CLF_DIR / f"final_results_{dataset_tag}_{thresh_metric}.json"
         
         if not path.exists():
             logger.error(f"No se encontraron los resultados finales: {path}")

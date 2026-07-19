@@ -2,21 +2,31 @@
 Módulo de Optimización de Hiperparámetros Generalizado.
 
 Utiliza Optuna (Optimización Bayesiana) para encontrar los mejores 
-parámetros de cualquier clasificador mediante validación cruzada.
-Guarda el historial completo de ensayos (trials) para depuración,
-y redirige los logs nativos de Optuna a un archivo específico.
+parámetros de cualquier clasificador registrado en MODEL_CONFIGS,
+mediante validación cruzada. Guarda el historial completo de ensayos
+(trials) para depuración, y redirige los logs nativos de Optuna a un
+archivo específico.
 """
 import logging
 import json
 import optuna
 import pandas as pd
 import numpy as np
-from typing import Callable, Any, Optional
+from typing import Callable, Any
 
-from src.evaluator import Evaluator
-from src.config import get_logger, RESULTS_CLF_DIR, LOGS_CLF_DIR
+from src.config import get_logger, RESULTS_CLF_DIR, LOGS_CLF_DIR, OPTIMIZATION_METRIC_CHOICES
+from .evaluator import Evaluator
+from .model_factory import build_and_fit
 
 logger = get_logger(__name__)
+
+# Métricas válidas para optimizar en Optuna: son las claves que devuelve
+# Evaluator.evaluate() como medida de calidad del modelo (se excluye
+# "threshold" porque es un parámetro de entrada, no una métrica de calidad).
+# Distinto de las estrategias de Evaluator._STRATEGIES (esas seleccionan un
+# UMBRAL de decisión; esto selecciona el objetivo de la búsqueda de
+# hiperparámetros).
+
 
 
 class ConvergenceEarlyStoppingCallback:
@@ -78,6 +88,8 @@ class HyperparameterOptimizer:
         """
         Intercepta y enruta los logs nativos de Optuna exclusivamente hacia un archivo.
         """
+        logger.info(f"Configurando logger de Optuna para estudio '{self.study_name}'...")
+        logger.debug("Deshabilitando el logger por defecto de Optuna y redirigiendo a archivo.")
         optuna.logging.disable_default_handler()
         optuna_logger = logging.getLogger("optuna")
         optuna_logger.setLevel(logging.INFO)
@@ -87,8 +99,11 @@ class HyperparameterOptimizer:
         log_path = LOGS_CLF_DIR / f"optuna_{self.study_name}_{self.dataset_tag}.log"
         file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
         
+        # Corregido: el formatter anterior tenía "[Ensayo %(message)s" sin
+        # cerrar el corchete, produciendo líneas de log mal balanceadas
+        # (ej. "[Ensayo Trial 5 finished with value: 0.83..." sin "]").
         formatter = logging.Formatter(
-            fmt="[%(asctime)s] [Ensayo %(message)s", 
+            fmt="[%(asctime)s] [Ensayo] %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S"
         )
         file_handler.setFormatter(formatter)
@@ -96,22 +111,39 @@ class HyperparameterOptimizer:
 
     def optimize_cv(
         self,
-        model_class: Any,
+        model_tag: str,
         param_space_func: Callable[[optuna.Trial], dict],
         X_train: pd.DataFrame,
         y_train: pd.Series,
         cv_splits: list,
         preprocessor_class: Any,
-        fit_kwargs_func: Optional[Callable[[pd.Series], dict]] = None,
         metric: str = "prauc",
         patience: int = 100,
         tolerance: float = 0.001
     ) -> dict:
         """
-        Ejecuta la optimización evaluando cada combinación de parámetros 
+        Ejecuta la optimización evaluando cada combinación de parámetros
         a través de todos los pliegues de la validación cruzada.
+
+        `model_tag` (en vez del `model_class` + `fit_kwargs_func` de la
+        versión anterior) es la clave en MODEL_CONFIGS: el entrenamiento
+        de cada trial se delega en model_factory.build_and_fit, que aplica
+        el mismo mecanismo de balanceo de clase (sample_weight /
+        scale_pos_weight) que usa Trainer. Antes, `fit_kwargs_func` nunca
+        se pasaba desde clf_main.py, así que la búsqueda de hiperparámetros
+        corría SIN balanceo de clase mientras el entrenamiento final SÍ lo
+        aplicaba — dos regímenes distintos, resultado no confiable.
         """
-        logger.info(f"Iniciando estudio '{self.study_name}' con máximo de {self.n_trials} ensayos...")
+        if metric not in OPTIMIZATION_METRIC_CHOICES:
+            logger.error(f"Métrica de optimización inválida: '{metric}'.")
+            raise ValueError(
+                f"metric='{metric}' no es válida. Debe ser una de: {OPTIMIZATION_METRIC_CHOICES}."
+            )
+
+        logger.info(
+            f"Iniciando estudio '{self.study_name}' | Modelo: {model_tag.upper()} | "
+            f"Métrica objetivo: {metric.upper()} | Máximo de ensayos: {self.n_trials}"
+        )
 
         def objective(trial: optuna.Trial) -> float:
             try:
@@ -128,12 +160,9 @@ class HyperparameterOptimizer:
                     )
                     X_tr_scaled = prep.fit_transform(X_fold_tr)
                     X_val_scaled = prep.transform(X_fold_val)
-                    
-                    model = model_class(**params)
-                    fit_kwargs = fit_kwargs_func(y_fold_tr) if fit_kwargs_func else {}
-                    
-                    model.fit(X_tr_scaled, y_fold_tr, **fit_kwargs)
-                    
+
+                    model = build_and_fit(model_tag, params, X_tr_scaled, y_fold_tr)
+
                     evaluator = Evaluator()
                     metrics = evaluator.evaluate(model, X_val_scaled, y_fold_val)
                     fold_scores.append(metrics[metric])
