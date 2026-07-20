@@ -47,15 +47,13 @@ for d in [
 RAW_DATA_PATH   = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015.csv"
 CLEAN_DATA_PATH = DATA_DIR / "diabetes_binary_health_indicators_BRFSS2015_no_outliners.csv"
 
-
-
-
 # 2. Configuración del Logger
 RUN_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 def get_logger(name: str) -> logging.Logger:
     """
     Instancia y configura un logger formal. Redirige dinámicamente el log a 
     la subcarpeta correspondiente según el nombre del módulo o flujo.
+    Para el caso de XAI, crea un archivo de log dedicado por técnica/módulo.
     """
     logger = logging.getLogger(name)
     if logger.hasHandlers():
@@ -64,14 +62,15 @@ def get_logger(name: str) -> logging.Logger:
     logger.setLevel(logging.DEBUG)
 
     if "xai" in name.lower():
-        log_file = LOGS_XAI_DIR / "xai_pipeline.log"
+        tech_name = name.split(".")[-1]
+        log_file = LOGS_XAI_DIR / f"{tech_name}.log"
     elif "group" in name.lower():
-        log_file = LOGS_GROUP_DIR / "grouping_pipeline.log"
+        log_file = LOGS_GROUP_DIR / f"grouping_pipeline.log"
     else:
-        log_file = LOGS_CLF_DIR / "binary_classification.log"
+        log_file = LOGS_CLF_DIR / f"binary_classification.log"
 
     c_handler = logging.StreamHandler(sys.stdout)
-    f_handler = logging.FileHandler(log_file, encoding="utf-8")
+    f_handler = logging.FileHandler(log_file, encoding="utf-8", mode="a")
 
     c_handler.setLevel(logging.INFO)
     f_handler.setLevel(logging.DEBUG)
@@ -86,7 +85,6 @@ def get_logger(name: str) -> logging.Logger:
     logger.addHandler(c_handler)
     logger.addHandler(f_handler)
     return logger
-
 
 # 3. Semillas
 
@@ -108,8 +106,8 @@ N_FOLDS    = 5
 # 5. Variable objetivo y columnas
 
 TARGET_COL = "Diabetes_binary"
-CONTINUOUS_COLS = ["BMI", "MentHlth", "PhysHlth"] # Variables continuas/discretas que serán estandarizadas.
-ORDINAL_COLS = ["Age", "Education", "Income", "GenHlth"] # Variables ordinales que se escalan exclusivamente para los métodos XAI.
+CONTINUOUS_COLS = ["BMI", "MentHlth", "PhysHlth"] 
+ORDINAL_COLS = ["Age", "Education", "Income", "GenHlth"] 
 
 # 6. Parámetros base de los modelos
 
@@ -155,7 +153,6 @@ OPTUNA_TOLERANCE = 0.001
 OPTIMIZATION_METRIC_CHOICES = ("prauc", "precision", "recall", "f1", "f2", "mcc")
 
 def dt_param_space(trial) -> dict:
-    """Espacio de búsqueda hiperparamétrica estructurado para Decision Tree."""
     return {
         "criterion": trial.suggest_categorical("criterion", ["gini", "entropy"]),        
         "max_depth": trial.suggest_int("max_depth", 3, 15),
@@ -168,7 +165,6 @@ def dt_param_space(trial) -> dict:
     }
 
 def xgb_param_space(trial) -> dict:
-    """Espacio de búsqueda hiperparamétrica para XGBoost."""
     return {
         "n_estimators": trial.suggest_int("n_estimators", 100, 1000, step=50),
         "max_depth": trial.suggest_int("max_depth", 3, 10),
@@ -224,8 +220,28 @@ PARTITION_TAGS = ("train", "val", "tune")
 
 # 10. Configuración XAI
 
-# 10.1 Permutation Feature Importance (PFI)
+XAI_METHOD_CHOICES = ("intrinsic", "pfi", "surrogate", "lime", "shap")
+
+# 10.1 PFI (Permutation Feature Importance)
 PFI_NJOBS     = -1
 PFI_N_REPEATS = 50
 PFI_SCORING    = "average_precision" 
 PFI_MAX_SAMPLES = 1.0
+
+# 10.2 LIME (Local Interpretable Model-Agnostic Explanations)
+LIME_SEED                 = 161803  
+LIME_N_SAMPLES             = 1000
+LIME_KERNEL_WIDTH          = None   
+LIME_NOISE_FACTOR          = 0.5
+LIME_ORDINAL_PERTURB_PROB  = 0.3
+LIME_BINARY_FLIP_PROB      = 0.1
+LIME_SURROGATE_CHOICES     = ("ridge", "tree")
+
+# 10.3 Configuración de Agrupamiento y XAI Local
+# Permite utilizar archivos generados por cualquier métrica de distancia o algoritmo.
+LOCAL_DISTANCE_COL = "gower_dist" # Métrica por defecto proveniente del grouper
+LOCAL_ANCHOR_COL   = "is_anchor"  # Columna booleana opcional si el grouper la define explícitamente
+
+# 10.4 Resúmenes de Estabilidad (Trust Scores)
+STABILITY_SPEARMAN_THRESHOLD = 0.70  # Límite inferior. Valores menores indican que la explicación se contradice fuertemente.
+STABILITY_LIPSCHITZ_THRESHOLD = 5.0  # Límite superior heurístico. Valores mayores se consideran de inestabilidad severa.
