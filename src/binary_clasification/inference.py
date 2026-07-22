@@ -116,11 +116,11 @@ class ModelInference:
     ) -> float:
         """
         Resuelve qué umbral usar, en orden de prioridad:
-          1. `threshold` explícito (override manual, para pruebas puntuales).
-          2. Umbral óptimo persistido para (model_tag, dataset_tag,
-             thresh_metric), si ese experimento existe en disco.
-          3. DEFAULT_THRESHOLD (0.5), con advertencia — no es un umbral
-             "óptimo", es el valor por defecto sin optimizar.
+            1. `threshold` explícito (override manual, para pruebas puntuales).
+            2. Umbral óptimo persistido para (model_tag, dataset_tag,
+                thresh_metric), si ese experimento existe en disco.
+            3. DEFAULT_THRESHOLD (0.5), con advertencia — no es un umbral
+                "óptimo", es el valor por defecto sin optimizar.
         """
         if threshold is not None:
             logger.info(f"[{dataset_tag}/{model_tag}] Umbral manual={threshold:.3f} (override explícito).")

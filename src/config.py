@@ -238,10 +238,9 @@ LIME_BINARY_FLIP_PROB      = 0.1
 LIME_SURROGATE_CHOICES     = ("ridge", "tree")
 
 # 10.3 Configuración de Agrupamiento y XAI Local
-# Permite utilizar archivos generados por cualquier métrica de distancia o algoritmo.
 LOCAL_DISTANCE_COL = "gower_dist" # Métrica por defecto proveniente del grouper
 LOCAL_ANCHOR_COL   = "is_anchor"  # Columna booleana opcional si el grouper la define explícitamente
 
 # 10.4 Resúmenes de Estabilidad (Trust Scores)
-STABILITY_SPEARMAN_THRESHOLD = 0.70  # Límite inferior. Valores menores indican que la explicación se contradice fuertemente.
-STABILITY_LIPSCHITZ_THRESHOLD = 5.0  # Límite superior heurístico. Valores mayores se consideran de inestabilidad severa.
+STABILITY_SPEARMAN_THRESHOLD = 0.70 
+STABILITY_LIPSCHITZ_THRESHOLD = 5.0

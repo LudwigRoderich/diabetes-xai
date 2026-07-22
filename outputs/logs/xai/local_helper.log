@@ -72,3 +72,23 @@
 [2026-07-19 22:55:38] [local_helper.py:233] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
 [2026-07-19 22:55:38] [local_helper.py:174] [INFO] -> Panel de dispersión de estabilidad generado en: stability_scatter_shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
 [2026-07-19 22:55:39] [local_helper.py:292] [INFO] -> Gráfico de distribuciones (Hist/Boxplot) generado en: stability_dist_shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
+[2026-07-20 14:13:05] [local_helper.py:65] [WARNING] -> Se encontraron 3 anclas (registros duplicados/idénticos).
+[2026-07-20 14:13:06] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_20813_xgb_full_neighborhood_xgb_full_val_anchor0.025_radius_0.35.png
+[2026-07-20 14:16:32] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 1409 vecinos.
+[2026-07-20 14:16:33] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_383_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
+[2026-07-20 14:21:06] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 1409 vecinos.
+[2026-07-20 14:21:06] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_383_xgb_full_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
+[2026-07-20 14:23:31] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 1977 vecinos.
+[2026-07-20 14:23:32] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_1222_xgb_full_neighborhood_xgb_full_val_anchor0.125_radius_0.35.png
+[2026-07-20 14:24:22] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 5866 vecinos.
+[2026-07-20 14:24:23] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_3726_xgb_full_neighborhood_xgb_full_val_anchor0.075_radius_0.35.png
+[2026-07-20 14:24:59] [local_helper.py:65] [WARNING] -> Se encontraron 3 anclas (registros duplicados/idénticos).
+[2026-07-20 14:25:00] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_20813_xgb_full_neighborhood_xgb_full_val_anchor0.025_radius_0.35.png
+[2026-07-20 14:27:04] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 5866 vecinos.
+[2026-07-20 14:27:04] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_3726_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.075_radius_0.35.png
+[2026-07-20 14:30:25] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 1977 vecinos.
+[2026-07-20 14:30:25] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_1222_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.125_radius_0.35.png
+[2026-07-20 14:31:43] [local_helper.py:67] [INFO] -> Grupo cargado con éxito: 1 ancla identificada y 1409 vecinos.
+[2026-07-20 14:31:43] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_383_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
+[2026-07-20 16:49:32] [local_helper.py:65] [WARNING] -> Se encontraron 3 anclas (registros duplicados/idénticos).
+[2026-07-20 16:49:33] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_20813_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.025_radius_0.35.png

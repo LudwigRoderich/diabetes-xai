@@ -173,3 +173,43 @@
 [2026-07-19 22:55:30] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
 [2026-07-19 22:55:38] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
 [2026-07-19 22:55:39] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-20 14:13:03] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: lime_surrogate=ridge, model=xgb
+[2026-07-20 14:13:03] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:13:03] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-20 14:14:24] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:16:31] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:16:31] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:16:31] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-20 14:17:16] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:21:05] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:21:05] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:21:05] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-20 14:21:10] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:23:30] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:23:30] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:23:30] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-20 14:23:36] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:24:21] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: lime_surrogate=ridge, model=xgb
+[2026-07-20 14:24:21] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:24:21] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-20 14:24:36] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:24:57] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:24:57] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:24:57] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-20 14:26:17] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:27:02] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:27:02] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:27:02] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-20 14:30:12] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:30:23] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:30:23] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:30:23] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-20 14:31:29] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 14:31:42] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 14:31:42] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 14:31:42] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-20 14:32:28] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-20 16:49:30] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: model=xgb, lime_surrogate=ridge
+[2026-07-20 16:49:30] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-20 16:49:30] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-20 17:08:05] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===

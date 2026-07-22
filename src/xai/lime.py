@@ -226,6 +226,7 @@ class LimeLocalAnalyzer(LocalStabilityAnalyzer):
             explanation=anchor_explanation,
             title=f"Impacto Local LIME [{self.surrogate[:1].upper()}{self.surrogate[1:]}] - Ancla",
             filename=f"{file_stem}.png",
+            feature_values=anchor_raw,
         )
 
         results = []

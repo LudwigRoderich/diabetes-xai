@@ -9,7 +9,7 @@ from scipy.stats import spearmanr
 import matplotlib.pyplot as plt
 from pathlib import Path
 import warnings
-from typing import Tuple, Any
+from typing import Tuple, Any, Optional
 
 from src.config import (
     get_logger, 
@@ -68,13 +68,37 @@ class LocalStabilityAnalyzer:
 
         return anchor_df, neighbors_df
 
-    def plot_local_explanation(self, explanation: pd.Series, title: str, filename: str) -> Path:
+    def plot_local_explanation(
+        self, 
+        explanation: pd.Series, 
+        title: str, 
+        filename: str,
+        feature_values: Optional[pd.Series] = None
+    ) -> Path:
+        """
+        Grafica la explicación local. Permite incluir los valores reales de las 
+        características en el eje Y para facilitar la interpretación visual inmediata.
+        """
         fig, ax = plt.subplots(figsize=(8, 6))
 
+        # Ordenar por el valor absoluto del impacto
         exp_sorted = explanation.reindex(explanation.abs().sort_values(ascending=True).index)
         colors = ["#DD8452" if val < 0 else "#4C72B0" for val in exp_sorted]
         
-        ax.barh(exp_sorted.index, exp_sorted.values, color=colors, edgecolor="black", alpha=0.8) #type: ignore
+        # Generar etiquetas dinámicas: si se pasan los valores reales, los concatenamos
+        labels = exp_sorted.index
+        if feature_values is not None:
+            # Formatea la etiqueta como: "NombreCaracteristica = Valor"
+            # Redondea valores numéricos si es necesario para mantener limpieza visual
+            labels = []
+            for feat in exp_sorted.index:
+                val = feature_values.get(feat, 'N/A')
+                if isinstance(val, float):
+                    labels.append(f"{feat} = {val:.4g}")
+                else:
+                    labels.append(f"{feat} = {val}")
+        
+        ax.barh(labels, exp_sorted.values, color=colors, edgecolor="black", alpha=0.8) #type: ignore
         ax.set_title(title)
         ax.set_xlabel("Impacto local en la predicción (Log-Odds o Probabilidad)")
         ax.axvline(0, color="black", linewidth=1.2, linestyle="-")

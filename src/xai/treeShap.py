@@ -85,11 +85,12 @@ class TreeShapLocalAnalyzer(LocalStabilityAnalyzer):
         
         anchor_series = pd.Series(anchor_shap_vector, index=feature_cols)
         file_stem = f"shap_local_impact_index_{anchor_df.index[0]}_{self.model_name}_{self.dataset_tag}_{neighborhood_path.stem}"
-        
+        anchor_raw_values = anchor_df[feature_cols].iloc[0]
         self.plot_local_explanation(
             explanation=anchor_series,
             title="Impacto Local SHAP - Ancla",
-            filename=f"{file_stem}.png"
+            filename=f"{file_stem}.png",
+            feature_values=anchor_raw_values
         )
 
         # 6. Analizar estabilidad contra los vecinos
