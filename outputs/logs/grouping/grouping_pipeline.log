@@ -91,3 +91,7 @@
 [2026-07-05 20:30:44] [grouper.py:23] [ERROR] -> Probabilidad objetivo (0.125) fuera del intervalo permitido [0.05, 0.1].
 [2026-07-05 20:37:41] [grouper.py:13] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
 [2026-07-05 20:37:41] [grouper.py:17] [INFO] -> Subgrupo extraído [0.05, 0.1]: 6241 observaciones.
+[2026-07-22 08:08:38] [probability_grouper.py:13] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-22 08:08:38] [probability_grouper.py:17] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1843 observaciones.
+[2026-07-22 08:08:38] [probability_grouper.py:32] [INFO] -> Ancla seleccionada con probabilidad real: 0.1700
+[2026-07-22 08:08:38] [probability_grouper.py:49] [INFO] -> Vecindad calculada (radio <= 0.4): 1337 observaciones encontradas.

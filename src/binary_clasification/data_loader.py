@@ -4,6 +4,8 @@ Gestión de carga y partición estratificada del dataset.
 
 import pandas as pd
 from sklearn.model_selection import StratifiedShuffleSplit, StratifiedKFold
+import numpy as np
+
 
 from src.config import (
     RAW_DATA_PATH, CLEAN_DATA_PATH,
@@ -51,11 +53,20 @@ class DataLoader:
         """
         Realiza la partición estratificada respetando TRAIN_SIZE, VAL_SIZE y TUNE_SIZE.
         """
+        logger.info("Iniciando partición estratificada (Train, Val, Tune)...")
+
         if self.df is None:
             logger.error("Intento de ejecutar split() sin dataset cargado.")
             raise RuntimeError("Llama a load() antes de split().")
 
-        logger.info("Iniciando partición estratificada (Train, Val, Tune)...")
+        total_size = TRAIN_SIZE + VAL_SIZE + TUNE_SIZE
+        if not np.isclose(total_size, 1.0):
+            logger.warning(f"La suma de TRAIN_SIZE, VAL_SIZE y TUNE_SIZE ({total_size:.2f}) no es 1.0. Esto podría llevar a particiones inesperadas.")
+        
+
+        if TARGET_COL not in self.df.columns:
+            logger.error(f"La columna objetivo '{TARGET_COL}' no se encontró en el dataset.")
+            raise ValueError(f"Columna objetivo '{TARGET_COL}' no encontrada.")
         
         X = self.df.drop(columns=[TARGET_COL])
         y = self.df[TARGET_COL]
@@ -74,11 +85,16 @@ class DataLoader:
         self.X_train, self.y_train = X_main.iloc[idx_train], y_main.iloc[idx_train]
         self.X_val, self.y_val     = X_main.iloc[idx_val], y_main.iloc[idx_val]
 
-        logger.debug( #type: ignore
+        if self.X_train is None or self.X_val is None or self.X_tune is None or self.X_train.empty or self.X_val.empty or self.X_tune.empty: 
+            logger.error("Una de las particiones resultó vacía o inexistentente. Revisa el tamaño del dataset o la configuración de split.")
+            raise RuntimeError("Partición vacía generada.")
+        
+
+        logger.debug(
             f"Partición completada | "
-            f"Train: {len(self.X_train)} ({TRAIN_SIZE*100:.0f}%), " #type: ignore
-            f"Val: {len(self.X_val)} ({VAL_SIZE*100:.0f}%), " #type: ignore
-            f"Tune: {len(self.X_tune)} ({TUNE_SIZE*100:.0f}%)" #type: ignore
+            f"Train: {len(self.X_train)} ({TRAIN_SIZE*100:.0f}%), "
+            f"Val: {len(self.X_val)} ({VAL_SIZE*100:.0f}%), " 
+            f"Tune: {len(self.X_tune)} ({TUNE_SIZE*100:.0f}%)"
         )
         return self
 

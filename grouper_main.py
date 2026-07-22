@@ -84,13 +84,13 @@ def main():
     X_data, _ = load_partition_data(loader, args.partition)
     
     try:
-        model = Persistence.load_model(args.model, fold_id=0, dataset_tag=args.dataset)
+        model = Persistence.load_model(args.model, fold_id="final", dataset_tag=args.dataset)
     except FileNotFoundError:
         logger.error(f"No se encontró el modelo {args.model} para el dataset {args.dataset}. Ejecute clf_main.py primero.")
         sys.exit(1)
         
     try:
-        preprocessor = Preprocessor.load(fold_id=0, dataset_tag=args.dataset)
+        preprocessor = Preprocessor.load(fold_id="final", dataset_tag=args.dataset)
         X_scaled = X_data.copy()
         X_scaled[CONTINUOUS_COLS] = preprocessor._scaler_model.transform(X_data[CONTINUOUS_COLS])
         logger.debug("Datos escalados utilizando el preprocesador pre-entrenado.")

@@ -151,6 +151,10 @@ class Evaluator:
         Evalúa un modelo sobre el conjunto indicado y extrae métricas estáticas.
         """
         try:
+            if not np.all(np.isin(y, [0, 1])):
+                logger.error("Las etiquetas verdaderas (y) deben ser binarias (0 o 1).")
+                raise ValueError("Las etiquetas verdaderas (y) deben ser binarias (0 o 1).")
+            
             proba = self._get_proba(model, X)
             labels = self._proba_to_labels(proba, self.threshold)
             
@@ -198,6 +202,10 @@ class Evaluator:
         logger.info(f"Iniciando optimización vectorizada de umbral (estrategia={strategy!r}).")
 
         proba = self._get_proba(model, X)
+        if not np.all(np.isin(y, [0, 1])):
+            logger.error("Las etiquetas verdaderas (y) deben ser binarias (0 o 1).")
+            raise ValueError("Las etiquetas verdaderas (y) deben ser binarias (0 o 1).")
+        
         y_true = np.asarray(y)
 
         tp, fp, fn, tn, thresholds = self._binary_confusion_curve(y_true, proba)
