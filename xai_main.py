@@ -38,7 +38,7 @@ def parse_args() -> argparse.Namespace:
         description="Etapa XAI — análisis de explicabilidad sobre modelos finales de clasificación binaria."
     )
     parser.add_argument("--dataset", choices=list(DATASET_TAGS) + ["both"], default="both")
-    parser.add_argument("--model", choices=list(MODEL_TAGS) + ["both"], default="xgb")
+    parser.add_argument("--model", choices=list(MODEL_TAGS) + ["all"], default="xgb")
     parser.add_argument(
         "--method",
         choices=list(XAI_METHOD_CHOICES) + ["all"],
@@ -47,15 +47,15 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--fold-id",
-        type=int,
-        default=0,
-        help="Fold cuyos artefactos (modelo/preprocesador) se cargan para el análisis.",
+        type=str,
+        default="final",
+        help="ID del fold cuyos artefactos se cargan. 'final' (defecto) para el modelo re-entrenado sobre todo X_train, o un número (0-N) para un fold específico de CV.",
     )
     parser.add_argument(
         "--group-file",
         type=str,
         default=None,
-        help="Ruta al archivo CSV del vecindario generado por grouper_main.py (requerido para métodos locales: shap, lime).",
+        help="Ruta al archivo CSV del vecindario generado por grouper_main.py (requerido para métodos locales como shap y lime).",
     )
     parser.add_argument(
         "--lime-surrogate",
@@ -119,7 +119,7 @@ def validate_context_args(args, expected_args: list[str], context_name: str):
             logger.info(f"[{context_name}] Usando valores por defecto para: {', '.join(defaults_info)}")
 
 
-def load_xai_artifacts(dataset_tag: str, fold_id: int) -> dict:
+def load_xai_artifacts(dataset_tag: str, fold_id: str) -> dict:
     try:
         models = {
             model_name: Persistence.load_model(model_name, fold_id=fold_id, dataset_tag=dataset_tag)
@@ -283,7 +283,7 @@ if __name__ == "__main__":
     validate_context_args(args, expected, "MAIN XAI PIPELINE")
 
     tags = list(DATASET_TAGS) if args.dataset == "both" else [args.dataset]
-    model_names = list(MODEL_TAGS) if args.model == "both" else [args.model]
+    model_names = list(MODEL_TAGS) if args.model == "all" else [args.model]
 
     logger.info("=== Etapa XAI Iniciada ===")
     logger.info(

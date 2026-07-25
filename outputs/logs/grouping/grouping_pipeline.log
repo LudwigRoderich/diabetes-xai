@@ -95,3 +95,7 @@
 [2026-07-22 08:08:38] [probability_grouper.py:17] [INFO] -> Subgrupo extraído [0.15, 1.0]: 1843 observaciones.
 [2026-07-22 08:08:38] [probability_grouper.py:32] [INFO] -> Ancla seleccionada con probabilidad real: 0.1700
 [2026-07-22 08:08:38] [probability_grouper.py:49] [INFO] -> Vecindad calculada (radio <= 0.4): 1337 observaciones encontradas.
+[2026-07-25 11:06:57] [probability_grouper.py:13] [DEBUG] -> ProbabilityGrouper inicializado y datos ordenados por probabilidad.
+[2026-07-25 11:06:57] [probability_grouper.py:17] [INFO] -> Subgrupo extraído [0.0, 0.05]: 40079 observaciones.
+[2026-07-25 11:06:57] [probability_grouper.py:32] [INFO] -> Ancla seleccionada con probabilidad real: 0.0250
+[2026-07-25 11:06:57] [probability_grouper.py:49] [INFO] -> Vecindad calculada (radio <= 0.15): 19830 observaciones encontradas.

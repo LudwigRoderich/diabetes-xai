@@ -249,3 +249,15 @@
 [2026-07-25 10:29:08] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
 [2026-07-25 10:29:08] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
 [2026-07-25 10:29:08] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 11:19:01] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: fold_id=final, lime_surrogate=ridge, dataset=both, model=xgb
+[2026-07-25 11:19:01] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-25 11:19:01] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=both, model=xgb, method=shap, fold_id=final, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:19:55] [xai_main.py:119] [INFO] -> [MAIN XAI PIPELINE] Usando valores por defecto para: lime_surrogate=ridge, fold_id=final
+[2026-07-25 11:19:55] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
+[2026-07-25 11:19:55] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=shap, fold_id=final, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:20:38] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-25 11:22:12] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False
+[2026-07-25 11:22:12] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:22:15] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 11:24:38] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:24:42] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.

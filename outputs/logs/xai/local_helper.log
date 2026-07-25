@@ -104,3 +104,12 @@
 [2026-07-25 10:28:50] [local_helper.py:281] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
 [2026-07-25 10:28:59] [local_helper.py:281] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
 [2026-07-25 10:29:08] [local_helper.py:281] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-25 11:19:03] [local_helper.py:64] [WARNING] -> Se encontraron 5 anclas (registros duplicados/idénticos).
+[2026-07-25 11:19:05] [local_helper.py:111] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_8203_xgb_full_neighborhood_xgb_full_val_anchor0.025_radius_0.15.png
+[2026-07-25 11:19:56] [local_helper.py:64] [WARNING] -> Se encontraron 5 anclas (registros duplicados/idénticos).
+[2026-07-25 11:19:57] [local_helper.py:111] [INFO] -> Gráfico local exportado exitosamente a: shap_local_impact_index_8203_xgb_full_neighborhood_xgb_full_val_anchor0.025_radius_0.15.png
+[2026-07-25 11:22:12] [local_helper.py:281] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:22:15] [local_helper.py:340] [INFO] -> Gráfico de distribuciones (Hist/Boxplot) generado en: stability_dist_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.png
+[2026-07-25 11:24:38] [local_helper.py:281] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.csv
+[2026-07-25 11:24:40] [local_helper.py:197] [INFO] -> Panel de dispersión de estabilidad generado en: stability_scatter_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.png
+[2026-07-25 11:24:42] [local_helper.py:340] [INFO] -> Gráfico de distribuciones (Hist/Boxplot) generado en: stability_dist_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.15.png
