@@ -242,5 +242,23 @@ LOCAL_DISTANCE_COL = "gower_dist" # Métrica por defecto proveniente del grouper
 LOCAL_ANCHOR_COL   = "is_anchor"  # Columna booleana opcional si el grouper la define explícitamente
 
 # 10.4 Resúmenes de Estabilidad (Trust Scores)
-STABILITY_SPEARMAN_THRESHOLD = 0.70 
-STABILITY_LIPSCHITZ_THRESHOLD = 5.0
+# Configuración para métricas de estabilidad que tienen un umbral de "confianza" o "alerta".
+# Permite al `LocalStabilityAnalyzer.compute_stability_summary` calcular dinámicamente
+# "Trust Scores" (tasas de degradación/inestabilidad) para cualquier métrica aquí definida.
+#
+# - `threshold`: El valor numérico del umbral.
+# - `operator`: Condición de alerta. Opciones: 'lt' (<), 'gt' (>),
+#   'le'/'leq' (<=), 'ge'/'geq' (>=), 'eq' (==), 'ne'/'neq' (!=).
+# - `label`: Prefijo para las columnas resultantes (ej. 'degradation', 'severe_instability').
+STABILITY_METRICS_CONFIG = {
+    "spearman_rho": {
+        "threshold": 0.70,
+        "operator": "lt",
+        "label": "degradation"
+    },
+    "lipschitz_constant": {
+        "threshold": 5.0,
+        "operator": "gt",
+        "label": "severe_instability"
+    }
+}

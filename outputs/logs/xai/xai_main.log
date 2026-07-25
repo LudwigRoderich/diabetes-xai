@@ -237,3 +237,15 @@
 [2026-07-24 22:39:40] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
 [2026-07-24 22:39:40] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
 [2026-07-24 22:39:41] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 10:22:40] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-25 10:22:40] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-25 10:22:40] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 10:28:50] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-25 10:28:50] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-25 10:28:50] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 10:28:59] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-25 10:28:59] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-25 10:28:59] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-25 10:29:08] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
+[2026-07-25 10:29:08] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-25 10:29:08] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.

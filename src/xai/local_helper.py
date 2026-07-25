@@ -17,8 +17,7 @@ from src.config import (
     RESULTS_XAI_DIR,
     LOCAL_DISTANCE_COL, 
     LOCAL_ANCHOR_COL,
-    STABILITY_SPEARMAN_THRESHOLD,
-    STABILITY_LIPSCHITZ_THRESHOLD
+    STABILITY_METRICS_CONFIG
 )
 
 logger = get_logger(__name__)
@@ -209,25 +208,34 @@ class LocalStabilityAnalyzer:
             raise FileNotFoundError(f"Archivo no encontrado: {stability_csv}")
 
         df = pd.read_csv(stability_csv)
-        cols_to_analyze = ["spearman_rho", "lipschitz_constant"]
-        
-        for col in cols_to_analyze:
-            if col not in df.columns:
-                logger.error(f"El archivo carece de la métrica {col}.")
-                raise ValueError(f"Falta la columna {col}")
+
+        # Identificar dinámicamente todas las columnas numéricas para analizar,
+        # excluyendo las que son identificadores o variables independientes.
+        cols_to_exclude = ["neighbor_index", "distance"]
+        cols_to_analyze = [
+            col for col in df.select_dtypes(include=np.number).columns
+            if col not in cols_to_exclude
+        ]
+
+        if not cols_to_analyze:
+            logger.warning(f"No se encontraron columnas numéricas para analizar en {stability_csv.name}. Se omite el resumen.")
+            return stability_csv
 
         stats_dict = {}
         n_total = len(df)
-        
-        # Iterar sobre las métricas para extraer estadísticas completas
+
+        if n_total == 0:
+            logger.warning(f"El archivo de estabilidad {stability_csv.name} está vacío. No se puede generar resumen.")
+            return stability_csv
+
         for col in cols_to_analyze:
             series = df[col]
             stats_dict[col] = {
                 "count": n_total,
                 "mean": series.mean(),
                 "median": series.median(),
-                "variance": series.var(),
-                "std_dev": series.std(),
+                "variance": series.var(ddof=0),
+                "std_dev": series.std(ddof=0),
                 "min": series.min(),
                 "max": series.max(),
                 "percentile_05": series.quantile(0.05),
@@ -238,17 +246,31 @@ class LocalStabilityAnalyzer:
                 "percentile_95": series.quantile(0.95)
             }
             
-        # Calcular Trust Scores (métricas de umbral)
-        degraded_spearman = (df["spearman_rho"] < STABILITY_SPEARMAN_THRESHOLD).sum()
-        severe_lipschitz = (df["lipschitz_constant"] > STABILITY_LIPSCHITZ_THRESHOLD).sum()
-        
-        stats_dict["spearman_rho"]["degradation_threshold"] = STABILITY_SPEARMAN_THRESHOLD
-        stats_dict["spearman_rho"]["degradation_count"] = degraded_spearman
-        stats_dict["spearman_rho"]["degradation_rate_%"] = (degraded_spearman / n_total) * 100
-        
-        stats_dict["lipschitz_constant"]["severe_instability_threshold"] = STABILITY_LIPSCHITZ_THRESHOLD
-        stats_dict["lipschitz_constant"]["severe_instability_count"] = severe_lipschitz
-        stats_dict["lipschitz_constant"]["severe_instability_rate_%"] = (severe_lipschitz / n_total) * 100
+        for col_name, config in STABILITY_METRICS_CONFIG.items():
+            if col_name in df.columns:
+                threshold, op_str, label = config["threshold"], config["operator"], config["label"]
+                
+                match op_str.lower():
+                    case "lt":
+                        count = (df[col_name] < threshold).sum()
+                    case "gt":
+                        count = (df[col_name] > threshold).sum()
+                    case "le" | "leq":
+                        count = (df[col_name] <= threshold).sum()
+                    case "ge" | "geq":
+                        count = (df[col_name] >= threshold).sum()
+                    case "eq":
+                        count = (df[col_name] == threshold).sum()
+                    case "ne" | "neq":
+                        count = (df[col_name] != threshold).sum()
+                    case _:
+                        logger.warning(f"Operador de umbral no soportado '{op_str}' para '{col_name}'. Se omite el Trust Score.")
+                        continue
+
+                if col_name in stats_dict:
+                    stats_dict[col_name][f"{label}_threshold"] = threshold
+                    stats_dict[col_name][f"{label}_count"] = int(count)
+                    stats_dict[col_name][f"{label}_rate_%"] = (count / n_total) * 100 if n_total > 0 else 0.0
 
         summary_df = pd.DataFrame(stats_dict)
         
