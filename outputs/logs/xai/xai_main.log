@@ -213,3 +213,27 @@
 [2026-07-20 16:49:30] [xai_main.py:288] [INFO] -> === Etapa XAI Iniciada ===
 [2026-07-20 16:49:30] [xai_main.py:289] [INFO] -> Parámetros de ejecución: dataset=full, model=xgb, method=lime, fold_id=0, lime_surrogate=ridge, group_file=outputs\results\grouping\neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
 [2026-07-20 17:08:05] [xai_main.py:315] [INFO] -> === Etapa XAI Completada ===
+[2026-07-24 22:37:05] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-24 22:37:05] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-24 22:37:06] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:37:33] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-24 22:37:33] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-24 22:37:33] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:37:45] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
+[2026-07-24 22:37:45] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-24 22:37:45] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:37:58] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-24 22:37:58] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-24 22:37:58] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:38:55] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-24 22:38:55] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-24 22:38:55] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:39:16] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_distribution=False, plot_stability=False
+[2026-07-24 22:39:16] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-24 22:39:16] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:39:28] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
+[2026-07-24 22:39:28] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-24 22:39:28] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.
+[2026-07-24 22:39:40] [xai_main.py:119] [INFO] -> [STABILITY ANALYSIS] Usando valores por defecto para: plot_stability=False, plot_distribution=False
+[2026-07-24 22:39:40] [xai_main.py:268] [INFO] -> Iniciando herramientas de análisis para: lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-24 22:39:41] [xai_main.py:279] [INFO] -> Operaciones de reporte/gráficos finalizadas.

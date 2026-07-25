@@ -92,3 +92,11 @@
 [2026-07-20 14:31:43] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_383_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.17_radius_0.35.png
 [2026-07-20 16:49:32] [local_helper.py:65] [WARNING] -> Se encontraron 3 anclas (registros duplicados/idénticos).
 [2026-07-20 16:49:33] [local_helper.py:112] [INFO] -> Gráfico local exportado exitosamente a: lime_local_impact_index_20813_xgb_full_ridge_1000samples_neighborhood_xgb_full_val_anchor0.025_radius_0.35.png
+[2026-07-24 22:37:06] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-24 22:37:33] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-24 22:37:45] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-24 22:37:58] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_shap_stability_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv
+[2026-07-24 22:38:55] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.025_radius_0.35.csv
+[2026-07-24 22:39:16] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.075_radius_0.35.csv
+[2026-07-24 22:39:28] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.125_radius_0.35.csv
+[2026-07-24 22:39:41] [local_helper.py:259] [INFO] -> Reporte estadístico exhaustivo guardado en: summary_lime_stability_ridge_neighborhood_xgb_full_val_anchor0.17_radius_0.35.csv

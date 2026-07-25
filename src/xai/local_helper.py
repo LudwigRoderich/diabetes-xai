@@ -230,6 +230,8 @@ class LocalStabilityAnalyzer:
                 "std_dev": series.std(),
                 "min": series.min(),
                 "max": series.max(),
+                "percentile_05": series.quantile(0.05),
+                "percentile_10": series.quantile(0.10),
                 "percentile_25": series.quantile(0.25),
                 "percentile_75": series.quantile(0.75),
                 "percentile_90": series.quantile(0.90),
